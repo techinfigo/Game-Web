@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-28">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME Academy - Premium Engineering Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GAME Academy is the Best online coaching for engineering preparation in India. We are the #1 online institute for engineering preparation offering GATE, ESE, SSC-JE, and Engineering Entrance Coaching Classes Online." />
+    <meta name="keywords" content="Best online coaching for engineering preparation, Best online institute for engineering preparation, online coaching for engineering preparation in India, online institute for engineering preparation in India, Engineering Entrance Coaching Classes Online, IIT, JEE, NEET, Government Exams, GATE, ESE, SSC-JE, PSU, RRB-JE" />
+    <meta name="author" content="Gaurav Babu Sir" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            },
+            colors: {
+              gameTeal: '#075d63',
+              gameTealDark: '#043f42',
+              gameBlack: '#0f1115',
+              gameGold: '#f2c537',
+              gameGoldDark: '#d8b32f',
+            },
+            animation: {
+              'float': 'float 20s ease-in-out infinite',
+              'float-delayed': 'float 25s ease-in-out infinite 5s',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shimmer': 'shimmer 2.5s linear infinite',
+              'scroll': 'scroll 30s linear infinite',
+              'spin-slow': 'spin 20s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' }
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            },
+            maxWidth: {
+              'site': '1080px',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Noise Texture Overlay */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      
+      /* Light Mode Defaults */
+      body {
+        background-color: #f1f5f9; /* Slate-100 for better contrast with white cards */
+        color: #1a202c;
+      }
+
+      /* Premium Glass Card */
+      .glass-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+      
+      /* Light Mode Glass */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 
+          0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -1px rgba(0, 0, 0, 0.03),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.5); /* Inner highlight */
+      }
+
+      /* Graph Paper Pattern */
+      .bg-graph-paper {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(to right, rgba(7, 93, 99, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(7, 93, 99, 0.03) 1px, transparent 1px);
+      }
+
+      /* Blueprint Pattern */
+      .bg-blueprint {
+        background-color: #0f172a;
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+
+      /* Hexagon Pattern */
+      .bg-hexagons {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V10c0-5.523-4.477-10-10-10s-10 4.477-10 10v20c0 5.523 4.477 10 10 10zM12 20c5.523 0 10-4.477 10-10V0H2v10c0 5.523 4.477 10 10 10z' fill='%23075d63' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      /* Gradient Border Utility */
+      .gradient-border-wrapper {
+        position: relative;
+        border-radius: 1rem;
+        padding: 0;
+        transition: transform 0.3s ease;
+        isolation: isolate;
+      }
+      .gradient-border-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: 1.1rem; 
+        padding: 2px; 
+        background: linear-gradient(135deg, rgba(7,93,99,0.5), rgba(242,197,55,0.5)); 
+        -webkit-mask: 
+           linear-gradient(#fff 0 0) content-box, 
+           linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude; 
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+      .gradient-border-wrapper:hover::before {
+        opacity: 1;
+        background: linear-gradient(135deg, #075d63, #f2c537); 
+      }
+      .gradient-border-wrapper:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(100, 116, 139, 0.5);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #075d63;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="bg-noise"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
