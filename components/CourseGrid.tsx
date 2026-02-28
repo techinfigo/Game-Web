@@ -370,111 +370,155 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
              </div>
           </div>
           
-          {/* Courses Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-             <AnimatePresence mode="popLayout">
+          {/* Courses Slidable Rows */}
+          <div className="space-y-12">
+             <AnimatePresence mode="wait">
                {filteredCourses.length > 0 ? (
-                 filteredCourses.map((course) => (
-                    <motion.div
-                      key={course.title}
-                      layout
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      className="h-full"
-                    >
-                      <div className="group relative bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-gameTeal/20 transition-all duration-500 h-full flex flex-col">
-                        
-                        {/* Image Header */}
-                        <div className="relative h-64 overflow-hidden">
-                            <img 
-                               src={course.image} 
-                               alt={course.title} 
-                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                            
-                            {/* Floating Badge */}
-                            <div className="absolute top-4 left-4 z-20">
-                               <span className={`text-[10px] font-black px-3 py-1.5 rounded-lg shadow-lg uppercase tracking-widest ${course.tagColor} border border-white/10`}>
-                                  {course.tag}
-                               </span>
-                            </div>
-
-                            {/* Stats on Image (Hidden on hover) */}
-                            <div className="absolute bottom-0 left-0 w-full p-6 group-hover:opacity-0 transition-opacity duration-300">
-                                <div className="flex items-center gap-4 text-white/90 text-[10px] font-bold uppercase tracking-wider mb-2">
-                                   <div className="flex items-center gap-1.5"><Clock size={12} className="text-gameGold" /> {course.duration}</div>
-                                   <div className="flex items-center gap-1.5"><BarChart3 size={12} className="text-gameGold" /> {course.liveCount} Live</div>
-                                </div>
-                                <h3 className="text-xl font-black text-white leading-tight drop-shadow-md">
-                                   {course.title}
-                                </h3>
-                            </div>
-                        </div>
-
-                        {/* Card Body - Minimal View */}
-                        <div className="p-6 flex flex-col flex-grow relative bg-white">
-                            <div className="flex justify-between items-center mb-4">
-                                 <div className="flex items-center gap-1 text-xs font-bold text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-100">
-                                    <Star size={12} className="text-gameGold fill-gameGold" /> {course.rating}
-                                 </div>
-                                 <div className="text-[10px] font-bold text-gameTeal uppercase tracking-wider">
-                                    {course.category}
-                                 </div>
-                            </div>
-
-                            {/* Price Section - Highlighted */}
-                            <div className="p-4 rounded-2xl bg-gameGold/10 border border-gameGold/20 relative overflow-hidden">
-                                <div className="text-[10px] font-black text-gameTeal uppercase tracking-widest mb-1">Special Offer Price</div>
-                                <div className="flex items-center gap-3">
-                                    <span className="text-3xl font-black text-gameTeal tracking-tight">{course.price}</span>
-                                    <div className="flex flex-col">
-                                      <span className="text-xs font-bold text-slate-400 line-through decoration-red-400">{course.originalPrice}</span>
-                                      <span className="text-[10px] font-black text-green-600 uppercase tracking-wide">
-                                        {course.discount} OFF
+                 <motion.div 
+                   key={selectedExam + searchTerm}
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   exit={{ opacity: 0 }}
+                   className="space-y-12"
+                 >
+                   {[
+                     filteredCourses.slice(0, Math.ceil(filteredCourses.length / 2)),
+                     filteredCourses.slice(Math.ceil(filteredCourses.length / 2))
+                   ].map((rowCourses, rowIndex) => (
+                     <div key={rowIndex} className="relative group/row">
+                       <div 
+                          id={`course-row-${rowIndex}`}
+                          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 pb-8 px-2 -mx-2 no-scrollbar"
+                       >
+                         {rowCourses.map((course) => (
+                           <motion.div
+                             key={course.title}
+                             layout
+                             initial={{ opacity: 0, x: 20 }}
+                             animate={{ opacity: 1, x: 0 }}
+                             className="min-w-[280px] md:min-w-[320px] lg:min-w-[calc(25%-18px)] snap-start h-full"
+                           >
+                             <div className="group relative bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-gameTeal/20 transition-all duration-500 h-full flex flex-col">
+                               
+                               {/* Image Header */}
+                               <div className="relative h-64 overflow-hidden">
+                                   <img 
+                                      src={course.image} 
+                                      alt={course.title} 
+                                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                   />
+                                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                   
+                                   {/* Floating Badge */}
+                                   <div className="absolute top-4 left-4 z-20">
+                                      <span className={`text-[10px] font-black px-3 py-1.5 rounded-lg shadow-lg uppercase tracking-widest ${course.tagColor} border border-white/10`}>
+                                         {course.tag}
                                       </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                   </div>
 
-                        {/* Hover Overlay with Details and Buttons - Now covering entire card */}
-                        <div className="absolute inset-0 bg-gameTeal/95 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-8 z-30">
-                            <motion.div 
-                              initial={{ y: 20, opacity: 0 }}
-                              whileInView={{ y: 0, opacity: 1 }}
-                              className="w-full space-y-6"
-                            >
-                              <div className="space-y-3 mb-6">
-                                 <p className="text-[10px] font-black text-gameGold uppercase tracking-widest text-center mb-4">Course Highlights</p>
-                                 {course.features.slice(0, 4).map((feature: string, i: number) => (
-                                    <div key={i} className="flex items-start gap-3 justify-center">
-                                       <CheckCircle2 size={16} className="text-gameGold shrink-0 mt-0.5" />
-                                       <span className="text-sm font-bold text-white leading-tight">{feature}</span>
-                                    </div>
-                                  ))}
-                              </div>
+                                   {/* Stats on Image (Hidden on hover) */}
+                                   <div className="absolute bottom-0 left-0 w-full p-6 group-hover:opacity-0 transition-opacity duration-300">
+                                       <div className="flex items-center gap-4 text-white/90 text-[10px] font-bold uppercase tracking-wider mb-2">
+                                          <div className="flex items-center gap-1.5"><Clock size={12} className="text-gameGold" /> {course.duration}</div>
+                                          <div className="flex items-center gap-1.5"><BarChart3 size={12} className="text-gameGold" /> {course.liveCount} Live</div>
+                                       </div>
+                                       <h3 className="text-xl font-black text-white leading-tight drop-shadow-md">
+                                          {course.title}
+                                       </h3>
+                                   </div>
+                               </div>
 
-                              <div className="space-y-3">
-                                <button 
-                                  onClick={() => setSelectedCourse(course)}
-                                  className="w-full py-4 rounded-xl bg-white text-gameTeal font-bold text-sm uppercase tracking-wider hover:bg-gameGold transition-colors flex items-center justify-center gap-2 shadow-lg"
-                                >
-                                  View Full Details <ChevronRight size={18} />
-                                </button>
-                                <button className="w-full py-4 rounded-xl bg-gameGold text-gameBlack font-bold text-sm uppercase tracking-wider hover:bg-gameGoldDark transition-all shadow-xl flex items-center justify-center gap-2">
-                                  Enroll Now <Zap size={18} className="fill-current" />
-                                </button>
-                              </div>
-                            </motion.div>
-                        </div>
-                      </div>
-                    </motion.div>
-                 ))
+                               {/* Card Body - Minimal View */}
+                               <div className="p-6 flex flex-col flex-grow relative bg-white">
+                                   <div className="flex justify-between items-center mb-4">
+                                        <div className="flex items-center gap-1 text-xs font-bold text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-100">
+                                           <Star size={12} className="text-gameGold fill-gameGold" /> {course.rating}
+                                        </div>
+                                        <div className="text-[10px] font-bold text-gameTeal uppercase tracking-wider">
+                                           {course.category}
+                                        </div>
+                                   </div>
+
+                                   {/* Price Section - Highlighted */}
+                                   <div className="p-4 rounded-2xl bg-gameGold/10 border border-gameGold/20 relative overflow-hidden">
+                                       <div className="text-[10px] font-black text-gameTeal uppercase tracking-widest mb-1">Special Offer Price</div>
+                                       <div className="flex items-center gap-3">
+                                           <span className="text-3xl font-black text-gameTeal tracking-tight">{course.price}</span>
+                                           <div className="flex flex-col">
+                                             <span className="text-xs font-bold text-slate-400 line-through decoration-red-400">{course.originalPrice}</span>
+                                             <span className="text-[10px] font-black text-green-600 uppercase tracking-wide">
+                                               {course.discount} OFF
+                                             </span>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               {/* Hover Overlay with Details and Buttons - Now covering entire card */}
+                               <div className="absolute inset-0 bg-gameTeal/95 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-8 z-30">
+                                   <motion.div 
+                                     initial={{ y: 20, opacity: 0 }}
+                                     whileInView={{ y: 0, opacity: 1 }}
+                                     className="w-full space-y-6"
+                                   >
+                                     <div className="space-y-3 mb-6">
+                                        <p className="text-[10px] font-black text-gameGold uppercase tracking-widest text-center mb-4">Course Highlights</p>
+                                        {course.features.slice(0, 4).map((feature: string, i: number) => (
+                                           <div key={i} className="flex items-start gap-3 justify-center">
+                                              <CheckCircle2 size={16} className="text-gameGold shrink-0 mt-0.5" />
+                                              <span className="text-sm font-bold text-white leading-tight">{feature}</span>
+                                           </div>
+                                         ))}
+                                     </div>
+
+                                     <div className="space-y-3">
+                                       <button 
+                                         onClick={() => setSelectedCourse(course)}
+                                         className="w-full py-4 rounded-xl bg-white text-gameTeal font-bold text-sm uppercase tracking-wider hover:bg-gameGold transition-colors flex items-center justify-center gap-2 shadow-lg"
+                                       >
+                                         View Full Details <ChevronRight size={18} />
+                                       </button>
+                                       <button className="w-full py-4 rounded-xl bg-gameGold text-gameBlack font-bold text-sm uppercase tracking-wider hover:bg-gameGoldDark transition-all shadow-xl flex items-center justify-center gap-2">
+                                         Enroll Now <Zap size={18} className="fill-current" />
+                                       </button>
+                                     </div>
+                                   </motion.div>
+                               </div>
+                             </div>
+                           </motion.div>
+                         ))}
+                       </div>
+
+                       {/* Navigation Arrows */}
+                       <button 
+                          onClick={() => {
+                             const el = document.getElementById(`course-row-${rowIndex}`);
+                             if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+                          }}
+                          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-200 flex items-center justify-center text-gameTeal opacity-0 group-hover/row:opacity-100 transition-opacity z-40 hover:bg-gameTeal hover:text-white"
+                       >
+                          <ChevronRight size={24} className="rotate-180" />
+                       </button>
+                       <button 
+                          onClick={() => {
+                             const el = document.getElementById(`course-row-${rowIndex}`);
+                             if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
+                          }}
+                          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-200 flex items-center justify-center text-gameTeal opacity-0 group-hover/row:opacity-100 transition-opacity z-40 hover:bg-gameTeal hover:text-white"
+                       >
+                          <ChevronRight size={24} />
+                       </button>
+                     </div>
+                   ))}
+                 </motion.div>
                ) : (
-                 <div className="col-span-full py-32 text-center bg-white rounded-[2.5rem] border-2 border-dashed border-slate-200 relative overflow-hidden">
+                 <motion.div 
+                   key="empty"
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   exit={{ opacity: 0 }}
+                   className="col-span-full py-32 text-center bg-white rounded-[2.5rem] border-2 border-dashed border-slate-200 relative overflow-hidden"
+                 >
                     <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
                     <div className="relative z-10">
                        <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 border border-slate-100">
@@ -494,7 +538,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
                           Clear Filters <X size={14} />
                        </button>
                     </div>
-                 </div>
+                 </motion.div>
                )}
              </AnimatePresence>
           </div>

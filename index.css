@@ -1,0 +1,11 @@
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.markdown-body {
+  @apply text-slate-600 leading-relaxed;
+}
