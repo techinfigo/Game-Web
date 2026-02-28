@@ -16,7 +16,7 @@ import FinalCTA from './FinalCTA';
 import CourseMarketing from './CourseMarketing';
 
 const CoursesPage: React.FC = () => {
-  const [selectedExam, setSelectedExam] = useState('GATE / ESE');
+  const [selectedExam, setSelectedExam] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
   return (

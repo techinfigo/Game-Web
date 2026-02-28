@@ -19,6 +19,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
   
   // Updated Category Order: SSC JE moved next to GATE / ESE
   const categories = [
+    { id: 'All', label: 'All Courses', icon: LayoutGrid },
     { id: 'GATE / ESE', label: 'GATE / ESE', icon: GraduationCap },
     { id: 'SSC JE', label: 'SSC JE', icon: Building2 }, 
     { id: 'Govt R&D', label: 'Govt R&D', icon: Microscope },
@@ -247,7 +248,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
   ];
 
   const filteredCourses = allCourses.filter(c => {
-    const matchesCategory = c.category === selectedExam;
+    const matchesCategory = selectedExam === 'All' || c.category === selectedExam;
     
     const searchLower = searchTerm.toLowerCase();
     const matchesSearch = searchTerm === "" || 
@@ -257,7 +258,8 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
     return matchesCategory && matchesSearch;
   });
 
-  const getCategoryCount = (catId: string) => allCourses.filter(c => c.category === catId).length;
+  const getCategoryCount = (catId: string) => 
+    catId === 'All' ? allCourses.length : allCourses.filter(c => c.category === catId).length;
 
   return (
     <section id="course-grid" className="pt-12 pb-24 relative min-h-[600px] bg-[#f8fafc]">
@@ -382,93 +384,91 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
                       transition={{ duration: 0.2 }}
                       className="h-full"
                     >
-                      <div className="group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-gameTeal/10 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+                      <div className="group relative bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-gameTeal/20 transition-all duration-500 h-full flex flex-col">
                         
-                        {/* Pattern Background for content area */}
-                        <div className="absolute inset-0 pointer-events-none opacity-[0.02]"
-                             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23075d63' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")` }}>
-                        </div>
-
                         {/* Image Header */}
-                        <div className="relative h-56 overflow-hidden">
+                        <div className="relative h-64 overflow-hidden">
                             <img 
                                src={course.image} 
                                alt={course.title} 
                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
                             
                             {/* Floating Badge */}
-                            <div className="absolute top-4 left-4">
-                               <span className={`text-[10px] font-black px-3 py-1.5 rounded-lg shadow-lg uppercase tracking-widest ${course.tagColor} backdrop-blur-md border border-white/10`}>
+                            <div className="absolute top-4 left-4 z-20">
+                               <span className={`text-[10px] font-black px-3 py-1.5 rounded-lg shadow-lg uppercase tracking-widest ${course.tagColor} border border-white/10`}>
                                   {course.tag}
                                </span>
                             </div>
 
-                            {/* Stats on Image */}
-                            <div className="absolute bottom-0 left-0 w-full p-5">
+                            {/* Stats on Image (Hidden on hover) */}
+                            <div className="absolute bottom-0 left-0 w-full p-6 group-hover:opacity-0 transition-opacity duration-300">
                                 <div className="flex items-center gap-4 text-white/90 text-[10px] font-bold uppercase tracking-wider mb-2">
-                                   <div className="flex items-center gap-1.5"><Clock size={12} className="text-[#f2c537]" /> {course.duration}</div>
-                                   <div className="flex items-center gap-1.5"><BarChart3 size={12} className="text-[#f2c537]" /> {course.liveCount} Live</div>
+                                   <div className="flex items-center gap-1.5"><Clock size={12} className="text-gameGold" /> {course.duration}</div>
+                                   <div className="flex items-center gap-1.5"><BarChart3 size={12} className="text-gameGold" /> {course.liveCount} Live</div>
                                 </div>
-                                <h3 className="text-xl font-black text-white leading-tight drop-shadow-md line-clamp-2">
+                                <h3 className="text-xl font-black text-white leading-tight drop-shadow-md">
                                    {course.title}
                                 </h3>
                             </div>
                         </div>
 
-                        {/* Card Body */}
-                        <div className="p-6 flex flex-col flex-grow relative z-10">
-                            
-                            <div className="flex justify-between items-start mb-5">
-                                 <div className="inline-block px-2 py-1 rounded bg-[#075d63]/5 border border-[#075d63]/10">
-                                    <p className="text-[10px] font-bold text-[#075d63] uppercase tracking-wider flex items-center gap-1">
-                                       <Sparkles size={10} /> {course.tagline}
-                                    </p>
-                                 </div>
+                        {/* Card Body - Minimal View */}
+                        <div className="p-6 flex flex-col flex-grow relative bg-white">
+                            <div className="flex justify-between items-center mb-4">
                                  <div className="flex items-center gap-1 text-xs font-bold text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-100">
-                                    <Star size={12} className="text-[#f2c537] fill-[#f2c537]" /> {course.rating}
+                                    <Star size={12} className="text-gameGold fill-gameGold" /> {course.rating}
+                                 </div>
+                                 <div className="text-[10px] font-bold text-gameTeal uppercase tracking-wider">
+                                    {course.category}
                                  </div>
                             </div>
 
-                            {/* Features Grid */}
-                            <div className="grid grid-cols-2 gap-y-3 gap-x-4 mb-6">
-                               {course.features.slice(0, 4).map((feature: string, i: number) => (
-                                  <div key={i} className="flex items-start gap-2">
-                                     <CheckCircle2 size={14} className="text-[#075d63] shrink-0 mt-0.5" />
-                                     <span className="text-xs font-bold text-slate-600 leading-tight">{feature}</span>
-                                  </div>
-                               ))}
+                            {/* Price Section - Highlighted */}
+                            <div className="p-4 rounded-2xl bg-gameGold/10 border border-gameGold/20 relative overflow-hidden">
+                                <div className="text-[10px] font-black text-gameTeal uppercase tracking-widest mb-1">Special Offer Price</div>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-3xl font-black text-gameTeal tracking-tight">{course.price}</span>
+                                    <div className="flex flex-col">
+                                      <span className="text-xs font-bold text-slate-400 line-through decoration-red-400">{course.originalPrice}</span>
+                                      <span className="text-[10px] font-black text-green-600 uppercase tracking-wide">
+                                        {course.discount} OFF
+                                      </span>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div className="mt-auto pt-5 border-t border-dashed border-slate-200">
-                               <div className="flex items-end justify-between mb-4">
-                                   <div>
-                                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Total Price</div>
-                                       <div className="flex items-baseline gap-2">
-                                           <span className="text-2xl font-black text-slate-900">{course.price}</span>
-                                           <span className="text-xs font-bold text-slate-400 line-through decoration-red-400">{course.originalPrice}</span>
-                                       </div>
-                                   </div>
-                                   <div className="text-right">
-                                        <span className="text-[10px] font-black text-green-700 bg-green-100 px-2 py-1 rounded uppercase tracking-wide">
-                                           {course.discount} Save
-                                        </span>
-                                   </div>
-                               </div>
-                               
-                               <div className="flex gap-3">
-                                  <button 
-                                     onClick={() => setSelectedCourse(course)}
-                                     className="flex-1 py-3.5 rounded-xl bg-slate-50 text-slate-900 font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors border border-slate-200"
-                                  >
-                                     Details
-                                  </button>
-                                  <button className="flex-[2] py-3.5 rounded-xl bg-[#075d63] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#043f42] transition-all shadow-lg shadow-[#075d63]/20 hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
-                                     Enroll Now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                                  </button>
-                               </div>
-                            </div>
+                        {/* Hover Overlay with Details and Buttons - Now covering entire card */}
+                        <div className="absolute inset-0 bg-gameTeal/95 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-8 z-30">
+                            <motion.div 
+                              initial={{ y: 20, opacity: 0 }}
+                              whileInView={{ y: 0, opacity: 1 }}
+                              className="w-full space-y-6"
+                            >
+                              <div className="space-y-3 mb-6">
+                                 <p className="text-[10px] font-black text-gameGold uppercase tracking-widest text-center mb-4">Course Highlights</p>
+                                 {course.features.slice(0, 4).map((feature: string, i: number) => (
+                                    <div key={i} className="flex items-start gap-3 justify-center">
+                                       <CheckCircle2 size={16} className="text-gameGold shrink-0 mt-0.5" />
+                                       <span className="text-sm font-bold text-white leading-tight">{feature}</span>
+                                    </div>
+                                  ))}
+                              </div>
+
+                              <div className="space-y-3">
+                                <button 
+                                  onClick={() => setSelectedCourse(course)}
+                                  className="w-full py-4 rounded-xl bg-white text-gameTeal font-bold text-sm uppercase tracking-wider hover:bg-gameGold transition-colors flex items-center justify-center gap-2 shadow-lg"
+                                >
+                                  View Full Details <ChevronRight size={18} />
+                                </button>
+                                <button className="w-full py-4 rounded-xl bg-gameGold text-gameBlack font-bold text-sm uppercase tracking-wider hover:bg-gameGoldDark transition-all shadow-xl flex items-center justify-center gap-2">
+                                  Enroll Now <Zap size={18} className="fill-current" />
+                                </button>
+                              </div>
+                            </motion.div>
                         </div>
                       </div>
                     </motion.div>
