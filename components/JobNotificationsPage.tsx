@@ -84,28 +84,7 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
     }
   ];
 
-  const diplomaExamsData = [
-    { no: 1, category: "Public Sector Undertakings (PSUs)", exams: "DRDO, SAIL, BHEL, BEL, NTPC, GAIL, IOCL, ISRO, NPCIL, etc.", roles: "Technician, Diploma Trainee Apprentice" },
-    { no: 2, category: "Railways", exams: "RRB-JE (Railway Recruitment Board)", roles: "Junior Engineer (JE)" },
-    { no: 3, category: "Staff Selection Commission (SSC)", exams: "SSC-JE", roles: "Junior Engineer (Civil, Mechanical, Electrical)" },
-    { no: 4, category: "State Public Service Commissions (PSC)", exams: "UPPSC, MPPSC, TNPSC, etc.", roles: "Junior Engineer (JE), Assistant Engineer (AE)" },
-    { no: 5, category: "Defense Sector", exams: "Indian Army (MES), Indian Navy, Military Engineering Services (MES)", roles: "Technical Roles, Junior Engineer" },
-    { no: 6, category: "Power Sector", exams: "PGCIL, State Electricity Boards (UPPCL, MAHADISCOM)", roles: "JE, Technical Assistant" },
-    { no: 7, category: "Road Transport & Highways", exams: "National Highways Authority of India (NHAI)", roles: "Technical Roles" },
-    { no: 8, category: "Municipal Corporations", exams: "Local Bodies (eg, Public Works Departments)", roles: "Junior Engineer, Sub-Engineer" },
-    { no: 9, category: "Apprenticeship Exams", exams: "IOCL, ONGC, HAL, Tata Steel, L&T", roles: "Apprenticeship Trainee" },
-    { no: 10, category: "State-Level Recruitment", exams: "PWD, Irrigation Dept.", roles: "JE, Technical Posts" },
-    { no: 11, category: "Border Roads Organisation", exams: "BRO", roles: "Junior Engineer, Technical Posts" },
-    { no: 12, category: "Metro Rail Corporations", exams: "DMRC, Chennai Metro, Bangalore Metro", roles: "Junior Engineer, Technician" }
-  ];
 
-  const btechExamsData = [
-    { category: "Maharatna PSUs", exams: "ONGC, IOCL, NTPC, GAIL, BHEL", role: "Graduate Executive Trainee", eligibility: "B.Tech + GATE Score" },
-    { category: "Navratna PSUs", exams: "BEL, HAL, OIL, RVNL", role: "Engineer / Assistant Manager", eligibility: "B.Tech + GATE/Written" },
-    { category: "Research Orgs", exams: "ISRO, DRDO, BARC", role: "Scientist / Engineer 'SC'", eligibility: "B.Tech with First Class" },
-    { category: "Central Govt", exams: "IES (UPSC), SSC JE", role: "Assistant Engineer / JE", eligibility: "B.Tech in core branch" },
-    { category: "State Govt", exams: "State PSC AE/JE", role: "Assistant Engineer", eligibility: "B.Tech in relevant branch" }
-  ];
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-gameTeal selection:text-white -mt-20">
@@ -459,115 +438,7 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
          </div>
       </section>
 
-      {/* SECTION 9: Diploma Holder Job Opportunities */}
-      <section className="py-24 bg-white border-t border-slate-200">
-         <div className="max-w-[1280px] mx-auto px-6">
-            <div className="mb-12">
-               <h2 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-                  Various PSUs, AE-JE Exams that are exclusively for Diploma holders only
-               </h2>
-               <div className="w-20 h-1 bg-gameGold mt-4 rounded-full"></div>
-            </div>
-            <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-xl overflow-hidden">
-               <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse min-w-[800px]">
-                     <thead>
-                        <tr className="bg-slate-900 text-white text-[10px] uppercase tracking-widest font-black">
-                           <th className="p-4 border-r border-white/10 w-[8%] text-center">Sr. No.</th>
-                           <th className="p-4 border-r border-white/10 w-[25%]">Category</th>
-                           <th className="p-4 border-r border-white/10 w-[37%]">Exams/Organisations</th>
-                           <th className="p-4 w-[30%]">Roles/Positions</th>
-                        </tr>
-                     </thead>
-                     <tbody className="text-[13px] text-slate-700 divide-y divide-slate-100">
-                        {diplomaExamsData.map((row, i) => (
-                           <tr key={i} className="hover:bg-slate-50 transition-colors">
-                              <td className="p-4 text-center font-bold text-slate-400 border-r border-slate-100">{row.no}.</td>
-                              <td className="p-4 font-black text-slate-900 border-r border-slate-100 bg-slate-50/20">{row.category}</td>
-                              <td className="p-4 border-r border-slate-100 leading-relaxed font-medium">{row.exams}</td>
-                              <td className="p-4 font-bold text-gameTeal leading-tight">{row.roles}</td>
-                           </tr>
-                        ))}
-                     </tbody>
-                  </table>
-               </div>
-            </div>
-            <div className="mt-8 bg-slate-50 p-6 rounded-2xl border-l-4 border-[#075d63] space-y-4">
-               <h4 className="font-black text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
-                  <Info size={18} className="text-gameTeal" /> Note :
-               </h4>
-               <ul className="list-disc pl-6 space-y-3 text-sm text-slate-600 font-bold leading-relaxed">
-                  <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
-               </ul>
-            </div>
-         </div>
-      </section>
 
-      {/* SECTION 10: B.Tech Core Branch Job Opportunities */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200">
-         <div className="max-w-[1280px] mx-auto px-6">
-            <div className="mb-12">
-               <h2 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-                  B.Tech Core Branch Job Opportunities
-               </h2>
-               <div className="w-20 h-1 bg-gameGold mt-4 rounded-full"></div>
-            </div>
-            <div className="bg-white rounded-[2.5rem] border border-slate-200 shadow-2xl overflow-hidden">
-               <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse min-w-[900px]">
-                     <thead>
-                        <tr className="bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest">
-                           <th className="p-5 border-r border-white/10 w-[20%] text-center">Category</th>
-                           <th className="p-5 border-r border-white/10 w-[30%] text-center">Exams/Organisations</th>
-                           <th className="p-5 border-r border-white/10 w-[25%] text-center">Job Role</th>
-                           <th className="p-5 w-[25%] text-center">Eligibility</th>
-                        </tr>
-                     </thead>
-                     <tbody className="text-[13px] text-slate-700 divide-y divide-slate-100">
-                        {btechExamsData.map((row, i) => (
-                           <tr key={i} className="hover:bg-teal-50/30 transition-colors">
-                              <td className="p-5 border-r border-slate-100 font-black text-slate-900 bg-slate-50/30 text-center uppercase tracking-tight">
-                                 {row.category}
-                              </td>
-                              <td className="p-5 border-r border-slate-100 font-bold text-gameTeal leading-relaxed text-center">
-                                 {row.exams}
-                              </td>
-                              <td className="p-5 border-r border-slate-100 font-medium text-slate-600 text-center">
-                                 {row.role}
-                              </td>
-                              <td className="p-5 leading-relaxed font-bold text-slate-500 text-center">
-                                 {row.eligibility}
-                              </td>
-                           </tr>
-                        ))}
-                     </tbody>
-                  </table>
-               </div>
-            </div>
-            <div className="mt-8 bg-[#f8fafc] p-8 rounded-[2rem] border-l-4 border-[#075d63] space-y-4 shadow-sm">
-               <h4 className="font-black text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
-                  <Info size={18} className="text-gameTeal" /> Note :
-               </h4>
-               <ul className="list-[lower-alpha] pl-8 space-y-3 text-sm text-slate-600 font-bold leading-relaxed">
-                  <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
-               </ul>
-            </div>
-         </div>
-      </section>
-
-      {/* SECTION 11: Notes */}
-      <section className="py-16 bg-white border-t border-slate-200">
-         <div className="max-w-[1280px] mx-auto px-6">
-            <div className="bg-slate-50 p-8 rounded-[2rem] border-l-4 border-gameGold space-y-4 shadow-sm">
-               <h3 className="font-black text-slate-900 text-lg uppercase tracking-wider flex items-center gap-2 mb-4">
-                  <Info size={20} className="text-[#075d63]" /> 11. Notes
-               </h3>
-               <ol className="list-decimal pl-6 space-y-4 text-base text-slate-700 font-medium leading-relaxed">
-                  <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
-               </ol>
-            </div>
-         </div>
-      </section>
 
       {/* FINAL CTA Section */}
       <section className="py-24 bg-gameTeal text-white relative overflow-hidden">
