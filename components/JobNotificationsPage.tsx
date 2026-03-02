@@ -7,6 +7,7 @@ import {
   Building2, ChevronRight, GraduationCap, Trophy,
   Zap, CheckCircle2, Plus, Minus, HelpCircle, FileText
 } from 'lucide-react';
+import FeaturedExams from './FeaturedExams';
 
 interface Job {
   id: number;
@@ -21,9 +22,10 @@ interface Job {
 interface JobNotificationsPageProps {
   isLoggedIn: boolean;
   openLogin: () => void;
+  onNavigate: (page: string) => void;
 }
 
-const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn, openLogin }) => {
+const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn, openLogin, onNavigate }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const findItems = [
@@ -350,42 +352,8 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
          </div>
       </section>
 
-      {/* SECTION 5: Examination Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
-         <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
-               <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                  Top Categories <span className="text-[#075d63]">We Cover</span>
-               </h2>
-               <div className="w-24 h-1.5 bg-[#f2c537] mx-auto rounded-full"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               {categories.map((cat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 group flex flex-col items-center text-center h-full min-h-[320px] relative overflow-hidden"
-                  >
-                     <div className={`w-20 h-20 rounded-[2rem] ${cat.bg} flex items-center justify-center ${cat.color} mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500`}>
-                        <cat.icon size={40} strokeWidth={1.5} />
-                     </div>
-                     <h3 className="text-3xl font-black text-slate-900 mb-4 group-hover:text-gameTeal transition-colors">
-                        {cat.name}
-                     </h3>
-                     <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-8">
-                        {cat.desc}
-                     </p>
-                     <button className="mt-auto inline-flex items-center gap-2 text-[#075d63] font-black text-xs uppercase tracking-[0.2em] group/btn hover:text-slate-900 transition-colors">
-                        Explore Notifications <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                     </button>
-                  </motion.div>
-               ))}
-            </div>
-         </div>
-      </section>
+      {/* SECTION 5: Featured Exams Section */}
+      <FeaturedExams onNavigate={onNavigate} />
 
       {/* SECTION 8: FAQ Section - UPDATED BACKGROUND TO THEME COLOR */}
       <section className="py-24 bg-gameTeal text-white relative overflow-hidden border-t border-white/10">

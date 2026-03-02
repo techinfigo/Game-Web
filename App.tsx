@@ -113,7 +113,11 @@ const App: React.FC = () => {
           ) : currentPage === 'reviews' ? (
              <AchieversPage initialFilter="story" />
           ) : currentPage === 'jobs' ? (
-             <JobNotificationsPage isLoggedIn={isLoggedIn} openLogin={() => setIsLoginOpen(true)} />
+             <JobNotificationsPage 
+               isLoggedIn={isLoggedIn} 
+               openLogin={() => setIsLoginOpen(true)} 
+               onNavigate={(page) => setCurrentPage(page)}
+             />
           ) : currentPage === 'blog' ? (
              <BlogPage />
           ) : currentPage === 'privacy' ? (
