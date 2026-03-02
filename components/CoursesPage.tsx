@@ -5,7 +5,7 @@ import CourseGrid from './CourseGrid';
 import ReasonsSection from './ReasonsSection';
 import ResultsSlider from './ResultsSlider';
 import FacultyShowcase from './FacultyShowcase';
-import GetStartedOffer from './GetStartedOffer';
+import SpecialOffer from './SpecialOffer';
 import GBVideos from './GBVideos';
 import ReferEarn from './ReferEarn';
 import FAQCourse from './FAQCourse';
@@ -45,8 +45,8 @@ const CoursesPage: React.FC = () => {
       {/* 6. ResultsSlider (Hall of Fame/Rankers marquee) */}
       <ResultsSlider />
 
-      {/* 7. GetStartedOffer (Limited Time Offer banner) */}
-      <GetStartedOffer />
+      {/* 7. SpecialOffer (Limited Time Offer banner) */}
+      <SpecialOffer />
 
       {/* 8. ReasonsSection (The "7 Reasons" circular infographic) */}
       <ReasonsSection />
