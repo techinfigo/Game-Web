@@ -11,12 +11,15 @@ import FeaturedExams from './FeaturedExams';
 
 interface Job {
   id: number;
-  title: string;
-  org: string;
-  branch: string[];
+  notification: string;
   eligibility: string;
-  lastDate: string;
-  status: 'Open' | 'Ending Soon' | 'Closed';
+  branches: string[];
+  startDate: string;
+  endDate: string;
+  status: 'Open' | 'Closed' | 'Yet to start';
+  pdfLink?: string;
+  usefulLinks?: string;
+  recommendedCourse?: string;
 }
 
 interface JobNotificationsPageProps {
@@ -37,18 +40,46 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
   ];
 
   const jobs: Job[] = [
-    { id: 1, title: "Assistant Engineer (Trainee)", org: "UPRVUNL", branch: ["Mechanical", "Electrical"], eligibility: "B.Tech", lastDate: "Oct 25, 2025", status: "Open" },
-    { id: 2, title: "Junior Engineer (Civil)", org: "CPWD", branch: ["Civil"], eligibility: "Diploma / B.Tech", lastDate: "Oct 12, 2025", status: "Ending Soon" },
-    { id: 3, title: "Management Trainee", org: "Coal India Limited", branch: ["Mechanical", "Civil", "Mining"], eligibility: "B.Tech + GATE Score", lastDate: "Nov 05, 2025", status: "Open" },
-    { id: 4, title: "Scientific Assistant", org: "BARC", branch: ["Mechanical", "Civil"], eligibility: "Diploma", lastDate: "Oct 30, 2025", status: "Open" },
-    { id: 5, title: "Graduate Apprentice", org: "ISRO - ISTRAC", branch: ["Mechanical", "Electronics"], eligibility: "B.Tech", lastDate: "Oct 20, 2025", status: "Ending Soon" },
-    { id: 6, title: "Assistant Manager (Tech)", org: "NHAI", branch: ["Civil"], eligibility: "B.Tech + GATE", lastDate: "Dec 15, 2025", status: "Open" },
-    { id: 7, title: "Junior Manager", org: "HAL", branch: ["Mechanical", "Production"], eligibility: "B.Tech", lastDate: "Oct 05, 2025", status: "Closed" },
-    { id: 8, title: "Engineer Trainee", org: "BHEL", branch: ["Mechanical", "Electrical"], eligibility: "B.Tech + GATE", lastDate: "Nov 12, 2025", status: "Open" },
-    { id: 9, title: "Section Engineer", org: "Indian Railways", branch: ["Civil", "Mechanical"], eligibility: "B.Tech / Diploma", lastDate: "Dec 01, 2025", status: "Open" },
-    { id: 10, title: "Scientist 'B'", org: "DRDO", branch: ["Mechanical", "Electronics"], eligibility: "B.Tech + GATE", lastDate: "Nov 20, 2025", status: "Open" },
-    { id: 11, title: "Graduate Engineer", org: "BEL", branch: ["Electronics", "Computer Science"], eligibility: "B.Tech", lastDate: "Nov 30, 2025", status: "Open" },
-    { id: 12, title: "Technical Officer", org: "NPCIL", branch: ["Mechanical", "Electrical"], eligibility: "B.Tech + GATE", lastDate: "Dec 20, 2025", status: "Open" }
+    {
+      id: 1,
+      notification: "Maharashtra State Electricity Distribution",
+      eligibility: "BCA,",
+      branches: [],
+      startDate: "January 31, 2025",
+      endDate: "February 28, 2025",
+      status: "Closed",
+      pdfLink: "#"
+    },
+    {
+      id: 2,
+      notification: "National Thermal Power Corporation (NTPC)",
+      eligibility: "B.Tech,",
+      branches: [],
+      startDate: "December 1, 2024",
+      endDate: "January 31, 2025",
+      status: "Yet to start",
+      pdfLink: "#"
+    },
+    {
+      id: 3,
+      notification: "State Bank of India (SBI)",
+      eligibility: "B.Tech,BCA,BBA,",
+      branches: [],
+      startDate: "January 10, 2025",
+      endDate: "February 7, 2025",
+      status: "Open",
+      pdfLink: "#"
+    },
+    {
+      id: 4,
+      notification: "Gas Authority Of India Ltd",
+      eligibility: "BBA,",
+      branches: [],
+      startDate: "January 1, 2025",
+      endDate: "January 31, 2025",
+      status: "Open",
+      pdfLink: "#"
+    }
   ];
 
   const categories = [
@@ -140,8 +171,8 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative w-80 h-80 bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/20 shadow-2xl flex flex-col items-center justify-center p-8 overflow-hidden group">
-                 <div className="w-20 h-20 bg-[#f2c537] rounded-3xl flex items-center justify-center text-black mb-6 shadow-xl transform rotate-3 group-hover:rotate-0 transition-transform">
+              <div className="relative w-80 h-80 bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/20 shadow-2xl flex flex-col items-center justify-center p-8 overflow-hidden">
+                 <div className="w-20 h-20 bg-[#f2c537] rounded-3xl flex items-center justify-center text-black mb-6 shadow-xl">
                     <Briefcase size={40} strokeWidth={2.5} />
                  </div>
                  <h3 className="text-2xl font-black text-white text-center mb-2">Live Updates</h3>
@@ -253,62 +284,48 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
             <div className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 overflow-hidden relative">
                {/* Container with fixed height roughly for 10 rows + header */}
                <div className="overflow-x-auto h-[800px] no-scrollbar">
-                  <table className="w-full text-left border-collapse min-w-[900px]">
+                  <table className="w-full text-left border-collapse min-w-[1200px]">
                      <thead className="sticky top-0 z-30">
-                        <tr className="bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest">
-                           <th className="p-6 border-r border-white/10 w-[25%]">Job Name / Post</th>
-                           <th className="p-6 border-r border-white/10 w-[20%]">Department</th>
-                           <th className="p-6 border-r border-white/10 w-[15%] text-center">Category</th>
-                           <th className="p-6 border-r border-white/10 w-[15%] text-center">Eligibility</th>
-                           <th className="p-6 border-r border-white/10 w-[12%] text-center">Last Date</th>
-                           <th className="p-6 w-[13%] text-center">Action</th>
+                        <tr className="bg-[#fdfbf6] text-slate-900 text-[13px] font-bold border-b-2 border-gameGold">
+                           <th className="p-4 border-r border-slate-200 w-[5%] text-center">Sr. No</th>
+                           <th className="p-4 border-r border-slate-200 w-[20%]">Job Notification</th>
+                           <th className="p-4 border-r border-slate-200 w-[10%]">Eligbility</th>
+                           <th className="p-4 border-r border-slate-200 w-[10%]">Branches</th>
+                           <th className="p-4 border-r border-slate-200 w-[10%]">Start Date</th>
+                           <th className="p-4 border-r border-slate-200 w-[10%]">End Date</th>
+                           <th className="p-4 border-r border-slate-200 w-[10%]">Status</th>
+                           <th className="p-4 border-r border-slate-200 w-[8%] text-center">Detailed Pdf</th>
+                           <th className="p-4 border-r border-slate-200 w-[8%] text-center">Usefull links</th>
+                           <th className="p-4 w-[9%] text-center">Recommended Course</th>
                         </tr>
                      </thead>
-                     <tbody className="text-[14px] text-slate-700 divide-y divide-slate-100 relative">
+                     <tbody className="text-[14px] text-slate-700 divide-y divide-slate-100 relative bg-white">
                         {jobs.map((job, idx) => (
                            <tr 
                              key={job.id} 
                              className={`transition-all duration-300 border-b border-slate-100 ${!isLoggedIn && idx > 2 ? 'blur-[4px] opacity-30 select-none pointer-events-none' : 'hover:bg-slate-50/80'}`}
                            >
-                              <td className="p-6 border-r border-slate-100">
-                                 <div className="flex flex-col">
-                                    <span className="font-black text-slate-900 mb-1">{job.title}</span>
-                                    <div className="flex items-center gap-2">
-                                       <span className={`w-2 h-2 rounded-full ${job.status === 'Ending Soon' ? 'bg-orange-500' : job.status === 'Open' ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                                       <span className="text-[10px] font-bold uppercase text-slate-400">{job.status}</span>
-                                    </div>
+                              <td className="p-4 border-r border-slate-100 text-center font-medium text-slate-500">{job.id}</td>
+                              <td className="p-4 border-r border-slate-100 font-medium text-slate-700">{job.notification}</td>
+                              <td className="p-4 border-r border-slate-100 font-medium text-slate-600">{job.eligibility}</td>
+                              <td className="p-4 border-r border-slate-100 text-center">
+                                 {job.branches.length > 0 ? job.branches.join(", ") : ""}
+                              </td>
+                              <td className="p-4 border-r border-slate-100 text-slate-600 font-medium">{job.startDate}</td>
+                              <td className="p-4 border-r border-slate-100 text-slate-600 font-medium">{job.endDate}</td>
+                              <td className="p-4 border-r border-slate-100">
+                                 <div className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${job.status === 'Closed' ? 'bg-red-500' : job.status === 'Yet to start' ? 'bg-yellow-500' : 'bg-green-500'}`}></span>
+                                    <span className="text-[13px] font-medium text-slate-700">{job.status}</span>
                                  </div>
                               </td>
-                              <td className="p-6 border-r border-slate-100">
-                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 shrink-0">
-                                       <Building2 size={20} />
-                                    </div>
-                                    <span className="font-bold text-slate-700">{job.org}</span>
-                                 </div>
-                              </td>
-                              <td className="p-6 border-r border-slate-100 text-center">
-                                 <div className="flex flex-wrap justify-center gap-1">
-                                    {job.branch.map(b => (
-                                       <span key={b} className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-gameTeal/5 text-[#075d63] border border-gameTeal/10">{b}</span>
-                                    ))}
-                                 </div>
-                              </td>
-                              <td className="p-6 border-r border-slate-100 text-center font-bold text-slate-600">{job.eligibility}</td>
-                              <td className="p-6 border-r border-slate-100 text-center">
-                                 <div className="flex flex-col items-center">
-                                    <Calendar size={14} className="text-slate-400 mb-1" />
-                                    <span className="font-black text-slate-900 whitespace-nowrap">{job.lastDate}</span>
-                                 </div>
-                              </td>
-                              <td className="p-6 text-center">
-                                 <button 
-                                    onClick={isLoggedIn ? undefined : openLogin}
-                                    className={`inline-flex items-center gap-2 bg-[#075d63] text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase hover:bg-slate-900 transition-all shadow-lg active:scale-95`}
-                                 >
-                                    Apply <ExternalLinkIcon size={12} />
+                              <td className="p-4 border-r border-slate-100 text-center">
+                                 <button className="text-red-500 hover:scale-110 transition-transform inline-flex justify-center">
+                                    <FileText size={18} />
                                  </button>
                               </td>
+                              <td className="p-4 border-r border-slate-100 text-center"></td>
+                              <td className="p-4 text-center"></td>
                            </tr>
                         ))}
                      </tbody>
