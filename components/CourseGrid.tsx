@@ -384,7 +384,7 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
                    <div className="relative group/row">
                      <div 
                         id="course-row-0"
-                        className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 pb-8 px-2 -mx-2 no-scrollbar"
+                        className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 pb-8 px-2 -mx-2 thin-scrollbar"
                      >
                        {filteredCourses.map((course) => (
                          <motion.div
