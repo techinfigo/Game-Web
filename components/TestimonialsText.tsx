@@ -75,7 +75,7 @@ const TestimonialsText: React.FC = () => {
                    <MessageCircle size={14} /> Student Voices
                 </div>
                 <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-none">
-                   Stories of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#075d63] to-teal-500">Success</span>
+                   Voices of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#075d63] to-teal-500">Students & Alumni</span>
                 </h2>
              </div>
 
