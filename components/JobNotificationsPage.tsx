@@ -30,7 +30,7 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
     { title: "Timely Notifications", icon: Clock, color: "text-gameTeal", glow: "shadow-gameTeal/20", bg: "bg-teal-50" },
     { title: "Detailed Information", icon: ClipboardList, color: "text-gameGoldDark", glow: "shadow-gameGold/20", bg: "bg-amber-50" },
     { title: "Exam Alerts", icon: BellRing, color: "text-gameTeal", glow: "shadow-gameTeal/20", bg: "bg-teal-50" },
-    { title: "Customized Updates", icon: Settings2, color: "text-gameGoldDark", glow: "shadow-gameGold/20", bg: "bg-amber-50" },
+    { title: "Customized Listings", icon: Settings2, color: "text-gameGoldDark", glow: "shadow-gameGold/20", bg: "bg-amber-50" },
     { title: "Comprehensive Support", icon: Headphones, color: "text-gameTeal", glow: "shadow-gameTeal/20", bg: "bg-teal-50" }
   ];
 
@@ -202,32 +202,22 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
                </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 items-start">
+            <div className="flex flex-wrap justify-center gap-8 lg:gap-16 items-start">
                {findItems.map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className={`flex flex-col items-center group ${i % 2 === 0 ? 'lg:translate-y-0' : 'lg:translate-y-12'}`}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex flex-col items-center gap-5 group w-32 md:w-40"
                   >
-                     <div className="relative mb-8">
-                        <div className={`absolute inset-0 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-current ${item.color}`}></div>
-                        <div className={`relative w-24 h-24 rounded-[2.5rem] ${item.bg} flex items-center justify-center ${item.color} shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 border-2 border-white group-hover:border-current`}>
-                           <item.icon size={40} strokeWidth={1.5} className="drop-shadow-sm" />
-                           <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-white border-4 border-current shadow-sm"></div>
-                        </div>
-                        <div className={`absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-1 rounded-full border border-slate-100 shadow-md text-xs font-black transition-all ${item.color} group-hover:border-current`}>
-                           {i + 1}
-                        </div>
+                     <div className="w-16 h-16 md:w-20 md:h-20 bg-[#075d63] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-teal-900/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-teal-900/20">
+                        <item.icon size={28} strokeWidth={1.5} className="md:w-8 md:h-8" />
                      </div>
-                     <div className="text-center px-2">
-                        <h3 className="text-lg md:text-xl font-black text-slate-900 leading-tight mb-2 group-hover:text-gameTeal transition-colors">
-                           {item.title}
-                        </h3>
-                        <div className={`h-1 w-0 bg-current ${item.color} mx-auto rounded-full group-hover:w-12 transition-all duration-500`}></div>
-                     </div>
+                     <h3 className="text-sm md:text-base font-bold text-[#075d63] text-center leading-tight">
+                        {item.title}
+                     </h3>
                   </motion.div>
                ))}
             </div>

@@ -436,14 +436,17 @@ const CourseGrid: React.FC<CourseGridProps> = ({ selectedExam, setSelectedExam, 
                                  </div>
 
                                  {/* Price Section - Highlighted */}
-                                 <div className="p-4 rounded-2xl bg-gameGold/10 border border-gameGold/20 relative overflow-hidden">
-                                     <div className="text-[10px] font-black text-gameTeal uppercase tracking-widest mb-1">Special Offer Price</div>
+                                 <div className="p-4 rounded-2xl bg-amber-50 border border-amber-100 relative overflow-hidden group-hover:border-amber-200 transition-colors">
+                                     <div className="absolute top-0 right-0 bg-[#f2c537] text-slate-900 text-[9px] font-bold px-2 py-0.5 rounded-bl-lg z-10">
+                                        Limited Time Deal
+                                     </div>
+                                     <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Special Offer Price</div>
                                      <div className="flex items-center gap-3">
-                                         <span className="text-3xl font-black text-gameTeal tracking-tight">{course.price}</span>
-                                         <div className="flex flex-col">
-                                           <span className="text-xs font-bold text-slate-400 line-through decoration-red-400">{course.originalPrice}</span>
-                                           <span className="text-[10px] font-black text-green-600 uppercase tracking-wide">
-                                             {course.discount} OFF
+                                         <span className="text-3xl font-black text-[#075d63] tracking-tight">{course.price}</span>
+                                         <div className="flex flex-col leading-none">
+                                           <span className="text-[10px] font-bold text-slate-400 line-through decoration-red-400 mb-0.5">{course.originalPrice}</span>
+                                           <span className="text-[10px] font-black text-emerald-600 uppercase tracking-wide flex items-center gap-1">
+                                             {course.discount}
                                            </span>
                                          </div>
                                      </div>
