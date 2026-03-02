@@ -114,6 +114,460 @@ const JobNotificationsPage: React.FC<JobNotificationsPageProps> = ({ isLoggedIn,
     {
       q: "How can I get personalized support for mechanical and civil engineering latest govt jobs?",
       a: "Our team offers one-on-one assistance, from job applications to interview prep, ensuring you’re ready for every opportunity."
+    },
+    {
+      q: "Why should I choose GAME Academy?",
+      a: (
+        <div className="space-y-4">
+          <p>We combine expertise, innovative tools, and tailored support to ensure you succeed in securing the best engineering jobs.</p>
+          <p>Gaurav Babu Sir is not just an educator; he is a mentor and a visionary leader in the field of competitive exam preparation. Over the past 12 years, he has guided and inspired lakhs of students, helping them achieve excellence in their studies and secure high-paying jobs in esteemed organizations. His mentorship has produced thousands of successful results, shaping countless careers and setting a gold standard in education.</p>
+          <p>Under the guidance of Gaurav Babu Sir, we at GAME Academy offer a comprehensive course designed to meet diverse preparation needs, whether for GATE, ESE, PSUs, AE & JE exams and competitive exams or to crack any interview. Personalized guidance, combined with structured learning, ensures that every student is equipped to excel in their preparation journey and emerge as a top performer.</p>
+        </div>
+      )
+    },
+    {
+      q: "Various PSUs, AE-JE Exams that are exclusively for Diploma holders only / What other exams can I give after completing my Diploma?",
+      a: (
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+            <thead>
+              <tr className="bg-white/10 text-gameGold">
+                <th className="border border-white/20 p-2">Sr. No.</th>
+                <th className="border border-white/20 p-2">Category</th>
+                <th className="border border-white/20 p-2">Exams/Organizations</th>
+                <th className="border border-white/20 p-2">Roles/Positions</th>
+              </tr>
+            </thead>
+            <tbody className="text-teal-50">
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>1.</td>
+                <td className="border border-white/20 p-2" rowSpan={2}>Public Sector Undertakings (PSUs)</td>
+                <td className="border border-white/20 p-2">DRDO, SAIL, BHEL, BEL, NTPC, GAIL, IOCL, ISRO, NPCIL</td>
+                <td className="border border-white/20 p-2">Technician, Diploma Trainee Apprentice</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">NTPC, PGCIL</td>
+                <td className="border border-white/20 p-2">Diploma Trainee</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">2.</td>
+                <td className="border border-white/20 p-2">Railways</td>
+                <td className="border border-white/20 p-2">RRB JE (Railway Recruitment Board)</td>
+                <td className="border border-white/20 p-2">Junior Engineer (JE)</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">3.</td>
+                <td className="border border-white/20 p-2">Staff Selection Commission (SSC)</td>
+                <td className="border border-white/20 p-2">SSC JE</td>
+                <td className="border border-white/20 p-2">Junior Engineer (Civil, Mechanical, Electrical)</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">4.</td>
+                <td className="border border-white/20 p-2">State Public Service Commissions (PSC)</td>
+                <td className="border border-white/20 p-2">UPPSC, MPPSC, TNPSC etc.</td>
+                <td className="border border-white/20 p-2">Junior Engineer (JE), Assistant Engineer (AE)</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>5.</td>
+                <td className="border border-white/20 p-2" rowSpan={2}>Defense Sector</td>
+                <td className="border border-white/20 p-2">Indian Army (MES), Indian Navy (SSR Artificer Apprentice)</td>
+                <td className="border border-white/20 p-2">Technical Roles</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Military Engineering Services (MES)</td>
+                <td className="border border-white/20 p-2">Junior Engineer</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">6.</td>
+                <td className="border border-white/20 p-2">Power Sector</td>
+                <td className="border border-white/20 p-2">PGCIL, State Electricity Boards (MAHADISCOM, TANGEDCO, UPPCL)</td>
+                <td className="border border-white/20 p-2">JE, Technical Assistant</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">7.</td>
+                <td className="border border-white/20 p-2">Road Transport & Highways</td>
+                <td className="border border-white/20 p-2">National Highways Authority of India (NHAI)</td>
+                <td className="border border-white/20 p-2">Technical Roles</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">8.</td>
+                <td className="border border-white/20 p-2">Municipal Corporations</td>
+                <td className="border border-white/20 p-2">Local Bodies (eg. Public Works Departments)</td>
+                <td className="border border-white/20 p-2">Junior Engineer, Sub-Engineer</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">9.</td>
+                <td className="border border-white/20 p-2">Apprenticeship Exams</td>
+                <td className="border border-white/20 p-2">IOCL, ONGC, HAL, BOL, Tata Steel, L&T</td>
+                <td className="border border-white/20 p-2">Apprenticeship Trainee</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">10.</td>
+                <td className="border border-white/20 p-2">State-Level Recruitment</td>
+                <td className="border border-white/20 p-2">PWD, Irrigation Dept., Rural Development Dept</td>
+                <td className="border border-white/20 p-2">JE, Technical Posts</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">11.</td>
+                <td className="border border-white/20 p-2">Border Roads Organization</td>
+                <td className="border border-white/20 p-2">BRO</td>
+                <td className="border border-white/20 p-2">Junior Engineer, Technical Posts</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">12.</td>
+                <td className="border border-white/20 p-2">Metro Rail Corporations</td>
+                <td className="border border-white/20 p-2">DMRC, Chennai Metro, Bangalore Metro</td>
+                <td className="border border-white/20 p-2">Junior Engineer, Technician</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="mt-4 space-y-2 text-sm text-teal-50/80">
+             <p><strong className="text-gameGold">Note:</strong></p>
+             <ol className="list-decimal pl-5 space-y-1">
+               <li>The above-mentioned listed opportunities are the general ones, to get real-time updates students can check the table above so that students can save time without missing the important job opportunities.</li>
+               <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
+             </ol>
+          </div>
+        </div>
+      )
+    },
+    {
+      q: "What are the job opportunities for lateral entry candidates?",
+      a: (
+        <div className="space-y-6">
+          <div>
+            <p className="font-bold text-gameGold mb-2">A. State Public Service Commissions (PSC):</p>
+            <p className="mb-4">Many state commissions offer lateral entry pathways for advanced roles based on diploma or degree qualifications.</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+                <thead>
+                  <tr className="bg-white/10 text-gameGold">
+                    <th className="border border-white/20 p-2">State PSC</th>
+                    <th className="border border-white/20 p-2">Role</th>
+                    <th className="border border-white/20 p-2">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody className="text-teal-50">
+                  <tr>
+                    <td className="border border-white/20 p-2">UPPSC, TNPSC MPPSC</td>
+                    <td className="border border-white/20 p-2">Junior Engineer, Sub-Engineer</td>
+                    <td className="border border-white/20 p-2">Diploma or equivalent; lateral entry for experienced candidates in technical departments.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-white/20 p-2">PWD, Irrigation Dept</td>
+                    <td className="border border-white/20 p-2">Assistant Engineer, JE</td>
+                    <td className="border border-white/20 p-2">Lateral entry allowed for diploma holders with significant experience</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-bold text-gameGold mb-2">B. Defense Services:</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+                <thead>
+                  <tr className="bg-white/10 text-gameGold">
+                    <th className="border border-white/20 p-2">Organization</th>
+                    <th className="border border-white/20 p-2">Role</th>
+                    <th className="border border-white/20 p-2">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody className="text-teal-50">
+                  <tr>
+                    <td className="border border-white/20 p-2">MES (Military Engineering Services)</td>
+                    <td className="border border-white/20 p-2">Junior Engineer</td>
+                    <td className="border border-white/20 p-2">Diploma holders with lateral entry eligibility for senior roles.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-white/20 p-2">Indian Navy, Army</td>
+                    <td className="border border-white/20 p-2">Technical Roles</td>
+                    <td className="border border-white/20 p-2">Diploma in engineering; lateral opportunities through experience and promotions.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-bold text-gameGold mb-2">C. Public Sector Undertakings (PSUs):</p>
+            <p className="mb-4">Lateral entry candidates with diplomas or advanced degrees can secure positions in PSUs through direct recruitment exams or experience-based roles.</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+                <thead>
+                  <tr className="bg-white/10 text-gameGold">
+                    <th className="border border-white/20 p-2">PSU</th>
+                    <th className="border border-white/20 p-2">Role</th>
+                    <th className="border border-white/20 p-2">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody className="text-teal-50">
+                  <tr>
+                    <td className="border border-white/20 p-2">DRDO</td>
+                    <td className="border border-white/20 p-2">Technician, Senior Technician</td>
+                    <td className="border border-white/20 p-2">Diploma or lateral entry qualification in engineering.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-white/20 p-2">NTPC, SAIL, GAIL</td>
+                    <td className="border border-white/20 p-2">Diploma Trainee, Supervisor</td>
+                    <td className="border border-white/20 p-2">Diploma or equivalent qualification in relevant fields.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-white/20 p-2">PGCIL, BEL, IOCL</td>
+                    <td className="border border-white/20 p-2">Supervisor, Junior Engineer</td>
+                    <td className="border border-white/20 p-2">Diploma with relevant work experience.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-bold text-gameGold mb-2">D. Railways:</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+                <thead>
+                  <tr className="bg-white/10 text-gameGold">
+                    <th className="border border-white/20 p-2">Exam/Recruitment</th>
+                    <th className="border border-white/20 p-2">Role</th>
+                    <th className="border border-white/20 p-2">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody className="text-teal-50">
+                  <tr>
+                    <td className="border border-white/20 p-2">RRB JE (Junior Engineer)</td>
+                    <td className="border border-white/20 p-2">Junior Engineer</td>
+                    <td className="border border-white/20 p-2">Diploma holders directly eligible; lateral entry pathways for higher posts via promotions.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-white/20 p-2">Senior Section Engineer</td>
+                    <td className="border border-white/20 p-2">Supervisor</td>
+                    <td className="border border-white/20 p-2">Degree holders with experience can enter mid-level posts.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-bold text-gameGold mb-2">E. Metro Rail Corporations:</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+                <thead>
+                  <tr className="bg-white/10 text-gameGold">
+                    <th className="border border-white/20 p-2">Organization</th>
+                    <th className="border border-white/20 p-2">Role</th>
+                    <th className="border border-white/20 p-2">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody className="text-teal-50">
+                  <tr>
+                    <td className="border border-white/20 p-2">DMRC, Chennai Metro, Bangalore Metro</td>
+                    <td className="border border-white/20 p-2">Junior Engineer</td>
+                    <td className="border border-white/20 p-2">Diploma holders eligible for lateral promotions to higher technical posts.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-4 space-y-2 text-sm text-teal-50/80">
+             <p><strong className="text-gameGold text-lg">Note :</strong></p>
+             <ol className="list-decimal pl-5 space-y-1">
+               <li>The above-mentioned listed opportunities are the general ones, to get real-time updates students can check "link of the table" so that students can save time without missing the important job opportunities.</li>
+               <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
+             </ol>
+          </div>
+        </div>
+      )
+    },
+    {
+      q: "What are the exams/Job opportunities for B-Tech core branches?",
+      a: (
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+            <thead>
+              <tr className="bg-white/10 text-gameGold">
+                <th className="border border-white/20 p-2">Category</th>
+                <th className="border border-white/20 p-2">Exams/Organizations</th>
+                <th className="border border-white/20 p-2">Job Role</th>
+                <th className="border border-white/20 p-2">Eligibility</th>
+              </tr>
+            </thead>
+            <tbody className="text-teal-50">
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={3}>Public Sector Undertakings (PSUs)</td>
+                <td className="border border-white/20 p-2">SAIL, IOCL, ONGC, NTPC, SAIL, BHEL, PGCIL</td>
+                <td className="border border-white/20 p-2">Graduate Trainee Engineer, Officer</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil + GATE Score</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">ISRO (Indian Space Research Organization)</td>
+                <td className="border border-white/20 p-2">Scientist/Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech with 65% or above marks.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">DRDO (Defense Research and Development Organization)</td>
+                <td className="border border-white/20 p-2">Scientist 'B'</td>
+                <td className="border border-white/20 p-2">B.Tech in relevant branch + GATE/DRDO Exam.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Union Public Service Exams</td>
+                <td className="border border-white/20 p-2">ESE (Engineering Services Examination)</td>
+                <td className="border border-white/20 p-2">Group A Engineer (Central Govt.)</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Staff Selection Exams</td>
+                <td className="border border-white/20 p-2">SSC JE (Junior Engineer)</td>
+                <td className="border border-white/20 p-2">Junior Engineer in Central Govt.</td>
+                <td className="border border-white/20 p-2">B.Tech in Civil/Mechanical Engineering.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>Railways</td>
+                <td className="border border-white/20 p-2">RRB SSE (Senior Section Engineer)</td>
+                <td className="border border-white/20 p-2">Senior Section Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">IRSE (Indian Railway Services of Engineers)</td>
+                <td className="border border-white/20 p-2">Group A Engineer</td>
+                <td className="border border-white/20 p-2">Through ESE (B.Tech required).</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">State PSC Exams</td>
+                <td className="border border-white/20 p-2">State AE/JE Exams (UPPSC, TNPSC, etc.)</td>
+                <td className="border border-white/20 p-2">Assistant Engineer, Junior Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>Defence Services</td>
+                <td className="border border-white/20 p-2">Indian Army SSC Tech Entry</td>
+                <td className="border border-white/20 p-2">Technical Officer</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">MES (Military Engineering Services)</td>
+                <td className="border border-white/20 p-2">Junior Engineer, Assistant Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in relevant engineering discipline</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Metro Rail Corporations</td>
+                <td className="border border-white/20 p-2">DMRC, BMRC, LMRC, etc.</td>
+                <td className="border border-white/20 p-2">Junior Engineer, Assistant Manager</td>
+                <td className="border border-white/20 p-2">B.Tech in Civil/Mechanical.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Power Sector</td>
+                <td className="border border-white/20 p-2">PGCIL, State Electricity Boards (UPPCL, TANGEDCO, etc.)</td>
+                <td className="border border-white/20 p-2">Field Engineer, Assistant Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Electrical/Mechanical/Civil.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>Construction and Infrastructure</td>
+                <td className="border border-white/20 p-2">NHAI (National Highways Authority of India)</td>
+                <td className="border border-white/20 p-2">Site Engineer, Assistant Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Civil Engineering.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">CPWD (Central Public Works Department)</td>
+                <td className="border border-white/20 p-2">Assistant Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Civil/Mechanical.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>Research & Academia</td>
+                <td className="border border-white/20 p-2">GATE (Graduate Aptitude Test in Engineering)</td>
+                <td className="border border-white/20 p-2">M.Tech, Research Fellow, PhD Jobs</td>
+                <td className="border border-white/20 p-2">B.Tech in relevant discipline.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">CSIR NET</td>
+                <td className="border border-white/20 p-2">Research Fellow</td>
+                <td className="border border-white/20 p-2">B.Tech followed by post-graduate studies.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2" rowSpan={2}>Private Sector</td>
+                <td className="border border-white/20 p-2">L&T, Tata Projects, Ashok Leyland, Reliance Industries</td>
+                <td className="border border-white/20 p-2">Design Engineer, Project Engineer, QA/QC</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical/Civil.</td>
+              </tr>
+              <tr>
+                <td className="border border-white/20 p-2">Oil & Gas Companies (Cairn, Schlumberger, etc.)</td>
+                <td className="border border-white/20 p-2">Field Engineer, Maintenance Engineer</td>
+                <td className="border border-white/20 p-2">B.Tech in Mechanical.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="mt-4 space-y-2 text-sm text-teal-50/80">
+             <p><strong className="text-gameGold text-lg">Note :</strong></p>
+             <ol className="list-decimal pl-5 space-y-1">
+               <li>The above-mentioned listed opportunities are the general ones, to get real-time updates students can check "link of the table" so that students can save time without missing the important job opportunities.</li>
+               <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
+             </ol>
+          </div>
+        </div>
+      )
+    },
+    {
+      q: "Can lateral entry candidates give GATE/ESE/ISRO/BARC exams?",
+      a: (
+        <div className="space-y-6">
+          <div className="overflow-x-auto">
+            <table className="min-w-full border-collapse border border-white/20 text-sm text-left">
+              <thead>
+                <tr className="bg-white/10 text-gameGold">
+                  <th className="border border-white/20 p-2">Exam</th>
+                  <th className="border border-white/20 p-2">Eligibility for Lateral Entry Candidates</th>
+                  <th className="border border-white/20 p-2">Key Criteria</th>
+                </tr>
+              </thead>
+              <tbody className="text-teal-50">
+                <tr>
+                  <td className="border border-white/20 p-2">GATE</td>
+                  <td className="border border-white/20 p-2">Eligible</td>
+                  <td className="border border-white/20 p-2">Must have a B.Tech/B.E. degree from an AICTE/UGC- recognized institution. Final-year students are also eligible.</td>
+                </tr>
+                <tr>
+                  <td className="border border-white/20 p-2">ESE (Engineering Services Examination)</td>
+                  <td className="border border-white/20 p-2">Eligible</td>
+                  <td className="border border-white/20 p-2">Requires a B.Tech/B.E. degree or equivalent from a recognized university.</td>
+                </tr>
+                <tr>
+                  <td className="border border-white/20 p-2">ISRO</td>
+                  <td className="border border-white/20 p-2">Eligible</td>
+                  <td className="border border-white/20 p-2">Needs a B.Tech/B.E. degree in specific disciplines (e.g., Mechanical, Electronics, CS) with 65% minimum marks.</td>
+                </tr>
+                <tr>
+                  <td className="border border-white/20 p-2">BARC</td>
+                  <td className="border border-white/20 p-2">Eligible</td>
+                  <td className="border border-white/20 p-2">Requires a B.Tech/B.E. degree with at least 60% marks in engineering disciplines.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 space-y-2 text-sm text-teal-50/80">
+             <p><strong className="text-gameGold text-lg">Notes for Lateral Entry Candidates:</strong></p>
+             <ol className="list-decimal pl-5 space-y-1">
+               <li>The B.Tech/B.E. degree must be AICTE/UGC-recognized, irrespective of whether obtained through regular or lateral entry.</li>
+               <li>Ensure you meet the percentage/CGPA requirements for the specific exam.</li>
+               <li>Always check the detailed eligibility criteria for the year you are applying, as they may have minor updates.</li>
+             </ol>
+          </div>
+
+          <div className="mt-4 space-y-2 text-sm text-teal-50/80">
+             <ol className="list-decimal pl-5 space-y-1" start={4}>
+               <li>The above-mentioned listed opportunities are the general ones, to get real-time updates students can check "link of the table" so that students can save time without missing the important job opportunities.</li>
+               <li>The detailed syllabus of these exams is timely updated so that all the information is available in a single place.</li>
+             </ol>
+          </div>
+        </div>
+      )
+    },
+    {
+      q: "Can a diploma holder only appear for GATE/ESE/ISRO/BARC ?",
+      a: "Diploma holders must complete a B.E./B.Tech degree to qualify for GATE, ESE, ISRO, or BARC. However, there are job opportunities like SSC JE and RRB JE tailored for diploma-level qualifications."
     }
   ];
 
