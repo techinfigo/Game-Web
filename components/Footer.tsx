@@ -135,8 +135,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-           <div>
-              © 2024 GAME Academy. All Rights Reserved.
+           <div className="flex flex-col sm:flex-row items-center gap-2">
+              <span>© 2024 GAME Academy. All Rights Reserved.</span>
+              <span className="hidden sm:inline text-slate-700">|</span>
+              <span>
+                 Developed by <a href="https://techinfigo.com/" target="_blank" rel="noopener noreferrer" className="text-gameGold hover:text-white transition-colors font-bold">TECHINFIGO</a>
+              </span>
            </div>
            <div className="flex gap-6">
               <button onClick={() => onNavigate && onNavigate('privacy')} className="hover:text-gameGold transition-colors">Privacy Policy</button>
