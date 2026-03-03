@@ -250,15 +250,14 @@ const AboutPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-6 mb-10">
-                  <div className="flex gap-4">
-                    <div className="w-1.5 bg-gameGold shrink-0 rounded-full"></div>
-                    <p className="text-slate-600 text-lg font-medium leading-relaxed">
-                      We focus on building strong foundations in the very essence of problem-solving, critical thinking, and resilience.
+                  <p className="text-slate-600 text-lg font-medium leading-relaxed">
+                    We focus on building strong foundations in the very essence of problem-solving, critical thinking, and resilience.
+                  </p>
+                  <div className="bg-[#075d63]/5 border-l-4 border-[#075d63] p-6 rounded-r-xl">
+                    <p className="text-[#075d63] text-xl font-bold leading-relaxed">
+                      We are here to produce qualified engineers; not just processing admissions.
                     </p>
                   </div>
-                  <p className="text-slate-600 text-lg font-medium leading-relaxed">
-                    We are here to produce qualified engineers; not just processing admissions.
-                  </p>
                 </div>
 
                 <button className="bg-[#075d63] text-white px-10 py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-[#05494f] transition-all flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
