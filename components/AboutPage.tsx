@@ -117,35 +117,35 @@ const AboutPage: React.FC = () => {
   const approachSteps = [
     {
       id: 1,
-      title: "Effective Learning",
-      desc: "Our courses are designed to teach subjects from the ground up, ensuring solid fundamental concepts for competitive excellence.",
-      icon: BookOpen,
+      title: <>Personal<br />Mentorship</>,
+      desc: "1:1 guidance to identify weak areas and craft a personalized path to national ranking with expert academic oversight.",
+      icon: Users,
       color: "bg-teal-500",
       label: "START"
     },
     {
       id: 2,
-      title: "Rigorous Practice",
-      desc: "Mock tests and regular assessments help students evaluate and sharpen their exam-day skills through intensive application.",
-      icon: Target,
+      title: <>Effective<br />Learning</>,
+      desc: "Our courses are designed to teach subjects from the ground up, ensuring solid fundamental concepts for competitive excellence.",
+      icon: BookOpen,
       color: "bg-amber-500",
-      label: "PRACTICE"
+      label: "LEARN"
     },
     {
       id: 3,
-      title: "Parallel Revision",
-      desc: "A systematic approach to revision that ensures long-term retention of critical engineering topics through cyclical review.",
-      icon: History,
+      title: <>Rigorous<br />Practice</>,
+      desc: "Mock tests and regular assessments help students evaluate and sharpen their exam-day skills through intensive application.",
+      icon: Target,
       color: "bg-teal-500",
-      label: "RETAIN"
+      label: "PRACTICE"
     },
     {
       id: 4,
-      title: "Personal Mentorship",
-      desc: "1:1 guidance to identify weak areas and craft a personalized path to national ranking with expert academic oversight.",
-      icon: Users,
+      title: <>Parallel<br />Revision</>,
+      desc: "A systematic approach to revision that ensures long-term retention of critical engineering topics through cyclical review.",
+      icon: History,
       color: "bg-amber-500",
-      label: "SUCCESS"
+      label: "RETAIN"
     }
   ];
 
@@ -573,7 +573,7 @@ const AboutPage: React.FC = () => {
                        <div className="bg-white p-8 rounded-[3rem] shadow-xl border border-slate-100 text-center w-full min-h-[220px] flex flex-col group-hover:shadow-2xl transition-all duration-500 relative overflow-hidden group-hover:-translate-y-2">
                           <div className={`absolute top-0 left-0 w-full h-1.5 ${idx % 2 === 0 ? 'bg-gameTeal' : 'bg-gameGold'} opacity-40`}></div>
                           
-                          <h4 className="text-2xl font-black text-slate-900 mb-4 leading-tight uppercase tracking-tight whitespace-nowrap">
+                          <h4 className="text-2xl font-black text-slate-900 mb-4 leading-tight uppercase tracking-tight">
                              {step.title}
                           </h4>
                           <p className="text-slate-600 text-lg font-bold leading-relaxed">
