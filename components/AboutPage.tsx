@@ -229,15 +229,41 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="lg:w-7/12 order-1 lg:order-2">
               <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-6 tracking-tight">Gaurav’s Academy for <br/> <span className="text-gameTeal whitespace-nowrap">Mentorship & Education</span></h1>
-                <div className="mb-10"><p className="text-2xl md:text-3xl font-black text-white bg-gameTeal px-6 py-3 rounded-2xl inline-block shadow-lg shadow-gameTeal/20 italic whitespace-nowrap">“Learning Engineering is now a GAME”</p></div>
-                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-4 leading-tight">Embark on your Journey to Success With Gaurav Babu Sir</h3>
-                <div className="mb-10"><p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">Our Students Have achieved greatness — now, It’s <br/> <span className="text-gameTeal text-4xl md:text-5xl uppercase tracking-tighter underline decoration-gameGold decoration-8 underline-offset-4 whitespace-nowrap">Your Turn Next!</span></p></div>
-                <div className="space-y-6 text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-xl">
-                  <p className="border-l-4 border-gameGold pl-6">We focus on building strong foundations in the very essence of problem-solving, critical thinking, and resilience.</p>
-                  <p>We are here to produce qualified engineers; not just processing admissions.</p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6 tracking-tight">
+                  Gaurav’s Academy for <span className="text-[#075d63]">Mentorship & Education</span>
+                </h1>
+
+                <div className="mb-8">
+                  <span className="inline-block bg-[#075d63] text-white px-6 py-3 rounded-xl text-xl md:text-2xl font-black italic shadow-md">
+                    “Learning Engineering is now a GAME”
+                  </span>
                 </div>
-                <button className="bg-gameTeal text-white px-12 py-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl shadow-gameTeal/30 hover:bg-gameTealDark hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group whitespace-nowrap">Enroll Now <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></button>
+
+                <h3 className="text-lg md:text-xl font-bold text-slate-700 mb-4 leading-relaxed">
+                  Embark on your Journey to Success With Gaurav Babu Sir
+                </h3>
+
+                <div className="mb-8">
+                  <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
+                    Our Students Have achieved greatness — now, It’s <span className="text-[#075d63] border-b-4 border-gameGold pb-1">YOUR TURN NEXT!</span>
+                  </h2>
+                </div>
+
+                <div className="space-y-6 mb-10">
+                  <div className="flex gap-4">
+                    <div className="w-1.5 bg-gameGold shrink-0 rounded-full"></div>
+                    <p className="text-slate-600 text-lg font-medium leading-relaxed">
+                      We focus on building strong foundations in the very essence of problem-solving, critical thinking, and resilience.
+                    </p>
+                  </div>
+                  <p className="text-slate-600 text-lg font-medium leading-relaxed">
+                    We are here to produce qualified engineers; not just processing admissions.
+                  </p>
+                </div>
+
+                <button className="bg-[#075d63] text-white px-10 py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-[#05494f] transition-all flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                  ENROLL NOW <ArrowRight size={18} />
+                </button>
               </motion.div>
             </div>
           </div>

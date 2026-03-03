@@ -45,9 +45,8 @@ const SpecialOffer: React.FC = () => {
                    Limited-Time Power Deal
                 </div>
                 
-                <h2 className="text-5xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight relative z-10">
-                   Get Upto <span className="text-[#f2c537]">30% OFF</span> & <br/>
-                   Supercharge Your <br/> Exam Prep
+                <h2 className="text-5xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight relative z-10 [text-wrap:balance]">
+                   Get Upto <span className="text-[#f2c537]">30% OFF</span> & Supercharge Your Exam Prep
                 </h2>
                 
                 <p className="text-slate-400 text-lg mb-10 font-medium max-w-lg leading-relaxed">
