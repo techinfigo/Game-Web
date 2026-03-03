@@ -321,7 +321,7 @@ const AboutPage: React.FC = () => {
                            </div>
                            <h4 className="text-gameTeal font-black text-3xl uppercase tracking-tight mb-6">Mentorship Built for Success</h4>
                            <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-medium">
-                              Every student at GAME Academy is <span className="text-gameTeal font-black underline decoration-gameGold/30 decoration-4 underline-offset-4 text-white whitespace-nowrap">seen, heard, and mentored.</span> 
+                              Every student at GAME Academy is <span className="text-gameTeal font-black underline decoration-gameGold/30 decoration-4 underline-offset-4 text-white">seen, heard, and mentored.</span> 
                               <br/><br/>
                               We focus on developing <span className="font-black text-white">problem-solving & visualization skills</span>, creating an environment where students rise together.
                            </p>
@@ -340,8 +340,8 @@ const AboutPage: React.FC = () => {
                               <Zap size={150} className="text-gameGold" />
                            </div>
                            <div className="relative z-10 space-y-8">
-                              <p className="text-white font-black text-2xl md:text-4xl leading-tight italic whitespace-nowrap">
-                                 “Our tagline, <span className="text-gameGold whitespace-nowrap">Learning Engineering is now a GAME</span>, reflects our goal to make learning effective.”
+                              <p className="text-white font-black text-2xl md:text-4xl leading-tight italic">
+                                 “Our tagline, <span className="text-gameGold">Learning Engineering is now a GAME</span>, reflects our goal to make learning effective.”
                               </p>
                               <div className="h-1 w-20 bg-gameTeal rounded-full"></div>
                               <p className="text-teal-400 font-black text-xl md:text-2xl uppercase tracking-widest leading-snug">
@@ -445,21 +445,21 @@ const AboutPage: React.FC = () => {
                   <QuoteIcon size={120} className="absolute -top-24 -left-16 text-white opacity-[0.03] pointer-events-none" />
                   
                   <div className="relative z-10">
-                     <h3 className="text-3xl md:text-5xl font-black text-white leading-[1.15] mb-12 tracking-tight">
-                        Education is not just about learning; it’s about <span className="relative inline-block"><span className="relative z-10 whitespace-nowrap">awakening the potential</span><span className="absolute bottom-1 left-0 w-full h-4 bg-gameGold/20 -z-10"></span></span> within each student.
+                     <h3 className="text-3xl md:text-5xl font-black text-white leading-[1.15] mb-12 tracking-tight text-left">
+                        Education is not just about learning; it’s about <span className="bg-[linear-gradient(to_top,rgba(242,197,55,0.2)_35%,transparent_35%)] box-decoration-clone px-1">awakening the potential</span> within each student.
                      </h3>
 
                      <div className="space-y-10">
                         <div className="flex items-start gap-6 group">
                            <div className="mt-2 w-1.5 h-12 bg-gameTeal rounded-full opacity-30 group-hover:opacity-100 transition-opacity"></div>
-                           <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed group-hover:text-white transition-colors duration-500">
+                           <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed text-justify group-hover:text-white transition-colors duration-500">
                               At <span className="text-white font-black">GAME</span>, we don’t just teach; we <span className="text-gameGold font-black underline decoration-gameTeal/50 decoration-4 underline-offset-4 text-white whitespace-nowrap">empower, inspire, and guide</span> our students to become the best versions of themselves.
                            </p>
                         </div>
 
                         <div className="flex items-start gap-6 group">
                            <div className="mt-2 w-1.5 h-12 bg-gameGold rounded-full opacity-30 group-hover:opacity-100 transition-opacity"></div>
-                           <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed group-hover:text-white transition-colors duration-500">
+                           <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed text-justify group-hover:text-white transition-colors duration-500">
                               My mission is simple: to help you <span className="text-white font-black whitespace-nowrap">unlock your dreams</span>, and show you that success isn’t a destination, but a journey we walk together.
                            </p>
                         </div>
