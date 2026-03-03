@@ -637,22 +637,22 @@ const AboutPage: React.FC = () => {
 
          <div className="max-w-[1280px] mx-auto px-6 relative z-10">
             {/* MISSION BLOCK */}
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-32 relative">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-12 relative">
                <div className="absolute -top-20 -left-10 text-[20rem] font-black text-slate-50 pointer-events-none -z-10">01</div>
-               <motion.div {...fadeInUp} className="lg:w-[45%] shrink-0">
+               <motion.div {...fadeInUp} className="lg:w-[40%] shrink-0">
                   <div className="w-20 h-1.5 bg-gameTeal mb-8 rounded-full"></div>
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-100 text-gameTeal font-black text-[10px] uppercase tracking-[0.3em] mb-6 whitespace-nowrap">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-100 text-gameTeal font-black text-[10px] uppercase tracking-[0.3em] mb-6">
                      <Rocket size={12} className="animate-pulse" /> OUR IMPACT
                   </div>
-                  <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8 whitespace-nowrap">Our Mission</h2>
+                  <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8 text-balance">Our Mission</h2>
                </motion.div>
-               <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="lg:w-[55%]">
+               <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="lg:w-[60%]">
                   <div className="relative pl-10 border-l-4 border-gameGold py-4">
                      <QuoteIcon size={60} className="absolute -top-10 -left-6 text-gameTeal/10" />
-                     <p className="text-2xl md:text-4xl text-slate-800 font-bold leading-[1.3] italic mb-10">
-                        We are committed to a community of <span className="text-gameTeal underline decoration-gameGold/40 decoration-4 underline-offset-4 not-italic whitespace-nowrap">dreamers, achievers, and future leaders.</span>
+                     <p className="text-2xl md:text-3xl text-slate-800 font-bold leading-[1.4] italic mb-8 text-balance">
+                        We are committed to a community of <span className="text-gameTeal underline decoration-gameGold/40 decoration-4 underline-offset-4 not-italic">dreamers, achievers, and future leaders.</span>
                      </p>
-                     <p className="text-xl text-slate-600 font-medium leading-relaxed">
+                     <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed text-balance">
                         Our students are part of a vibrant, thriving network that fosters collaboration, growth, and support. The energy here is unmatched—students push each other, learn together, and rise together.
                      </p>
                   </div>
@@ -660,21 +660,21 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* VISION BLOCK */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 mb-32 relative">
-               <div className="absolute -top-20 -right-10 text-[20rem] font-black text-slate-50 pointer-events-none -z-10">02</div>
-               <motion.div {...fadeInUp} className="lg:w-[45%] shrink-0 text-right">
-                  <div className="w-20 h-1.5 bg-gameGold mb-8 rounded-full ml-auto"></div>
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-gameGoldDark font-black text-[10px] uppercase tracking-[0.3em] mb-6 whitespace-nowrap">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-12 relative">
+               <div className="absolute -top-20 -left-10 text-[20rem] font-black text-slate-50 pointer-events-none -z-10">02</div>
+               <motion.div {...fadeInUp} className="lg:w-[40%] shrink-0">
+                  <div className="w-20 h-1.5 bg-gameGold mb-8 rounded-full"></div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-gameGoldDark font-black text-[10px] uppercase tracking-[0.3em] mb-6">
                      <Target size={12} /> THE BLUEPRINT
                   </div>
-                  <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8 whitespace-nowrap">Our Vision</h2>
+                  <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8 text-balance">Our Vision</h2>
                </motion.div>
-               <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="lg:w-[55%] text-left md:text-right">
-                  <div className="relative pr-0 md:pr-10 md:border-r-4 md:border-gameTeal py-4">
-                     <p className="text-2xl md:text-4xl text-slate-800 font-bold leading-[1.3] mb-10">
-                        GAME was built on the belief that <span className="text-gameGoldDark whitespace-nowrap">education</span> should be a catalyst for change.
+               <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="lg:w-[60%]">
+                  <div className="relative pl-10 border-l-4 border-gameGold py-4">
+                     <p className="text-2xl md:text-3xl text-slate-800 font-bold leading-[1.4] italic mb-8 text-balance">
+                        GAME was built on the belief that <span className="text-gameGoldDark not-italic">education</span> should be a catalyst for change.
                      </p>
-                     <p className="text-xl text-slate-600 font-medium leading-relaxed">
+                     <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed text-balance">
                         We don’t just aim to help our students pass exams – we aim to empower them with the skills, knowledge, and mindset they need to excel in life. We focus on building strong foundations in problem-solving, critical thinking, and resilience through higher levels of excellence.
                      </p>
                      <div className="absolute bottom-4 right-0 opacity-[0.03] transform pointer-events-none -z-10"><Eye size={250} className="text-slate-900" /></div>
@@ -687,7 +687,7 @@ const AboutPage: React.FC = () => {
                initial={{ opacity: 0, y: 30 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="relative py-24 flex flex-col items-center"
+               className="relative pt-12 pb-24 flex flex-col items-center"
             >
                {/* Decorative Ambient Background */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-gameTeal/[0.03] rounded-full blur-[100px] pointer-events-none"></div>
