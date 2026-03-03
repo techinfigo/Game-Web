@@ -194,7 +194,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                       transition={{ delay: 1 }} 
                       className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white px-14 py-6 rounded-full shadow-[0_20px_40px_rgba(0,0,0,0.1)] text-center z-40 border border-slate-50 min-w-[340px]"
                     >
-                      <h3 className="text-[32px] font-extrabold text-[#0f172a] tracking-tight leading-none mb-3">Gaurav Babu Sir</h3>
+                      <h3 className="text-[32px] font-black text-[#0f172a] tracking-tight leading-none mb-3 whitespace-nowrap">Gaurav Babu Sir</h3>
                       <div className="h-[4px] w-14 bg-gameTeal mx-auto my-4 rounded-full"></div>
                       <div className="text-[11px] font-black tracking-[0.35em] text-[#075d63] uppercase">Founder & Mentor</div>
                     </motion.div>
