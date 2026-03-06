@@ -229,27 +229,27 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="lg:w-7/12 order-1 lg:order-2">
               <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6 tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-4 tracking-tight">
                   Gaurav’s Academy for <span className="text-[#075d63]">Mentorship & Education</span>
                 </h1>
 
-                <div className="mb-8">
+                <div className="mb-4">
                   <span className="inline-block bg-[#075d63] text-white px-6 py-3 rounded-xl text-xl md:text-2xl font-black italic shadow-md">
                     “Learning Engineering is now a GAME”
                   </span>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-bold text-slate-700 mb-4 leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-slate-700 mb-2 leading-relaxed">
                   Embark on your Journey to Success With Gaurav Babu Sir
                 </h3>
 
-                <div className="mb-8">
-                  <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-                    Our Students Have achieved greatness — now, It’s <span className="text-[#075d63] border-b-4 border-gameGold pb-1">YOUR TURN NEXT!</span>
-                  </h2>
+                <div className="mb-4">
+                  <p className="text-slate-600 text-lg font-medium leading-relaxed">
+                    Our Students Have achieved greatness — now, It’s <span className="text-[#075d63] font-black border-b-4 border-gameGold pb-1">YOUR TURN NEXT!</span>
+                  </p>
                 </div>
 
-                <div className="space-y-6 mb-10">
+                <div className="space-y-4 mb-8">
                   <p className="text-slate-600 text-lg font-medium leading-relaxed">
                     We focus on building strong foundations in the very essence of problem-solving, critical thinking, and resilience.
                   </p>
