@@ -1133,7 +1133,7 @@ const AboutPage: React.FC = () => {
                                  onClick={() => setSelectedFaculty(fac)}
                                  className="bg-[#12141c] rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl flex flex-col group hover:border-gameTeal/30 transition-all duration-500 cursor-pointer h-full"
                               >
-                                 <div className="h-64 relative overflow-hidden bg-[#0a0a0a]">
+                                 <div className="h-80 relative overflow-hidden bg-[#0a0a0a]">
                                     <img 
                                        src={fac.img} 
                                        alt={fac.name} 
