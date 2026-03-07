@@ -748,8 +748,8 @@ const AboutPage: React.FC = () => {
                         <Landmark size={20} />
                      </div>
                      <div>
-                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">Phase 01</p>
-                        <h4 className="text-sm font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Successful Entrepreneur</h4>
+                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">01</p>
+                        <h4 className="text-xl font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Successful<br />Entrepreneur</h4>
                         <p className="text-[10px] text-slate-400 font-bold leading-relaxed">& Founder of GAME Academy</p>
                      </div>
                   </motion.div>
@@ -761,8 +761,8 @@ const AboutPage: React.FC = () => {
                         <Users size={20} />
                      </div>
                      <div>
-                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">Phase 02</p>
-                        <h4 className="text-sm font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Mentored 1 Lakh+</h4>
+                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">02</p>
+                        <h4 className="text-xl font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Mentored<br />1 Lakh+</h4>
                         <p className="text-[10px] text-slate-400 font-bold leading-relaxed">Students Nationwide</p>
                      </div>
                   </motion.div>
@@ -785,7 +785,7 @@ const AboutPage: React.FC = () => {
                   {/* Overlay Content on Image */}
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full px-8 text-center z-10">
                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-gameGold text-black text-[8px] font-black uppercase tracking-widest rounded-full mb-4 shadow-xl">
-                        <Sparkles size={10} className="fill-current" /> Phase 04: The Anchor
+                        <Sparkles size={10} className="fill-current" /> 04: The Anchor
                      </div>
                      <h3 className="text-4xl md:text-5xl font-black tracking-tight mb-1 whitespace-nowrap">GAURAV BABU SIR</h3>
                      <p className="text-gameTeal font-black text-[10px] uppercase tracking-[0.4em] opacity-90 whitespace-nowrap">Founder & Visionary</p>
@@ -802,8 +802,8 @@ const AboutPage: React.FC = () => {
                         <Mic2 size={20} />
                      </div>
                      <div>
-                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">Phase 03</p>
-                        <h4 className="text-sm font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Motivational Speaker</h4>
+                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">03</p>
+                        <h4 className="text-xl font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Motivational<br />Speaker</h4>
                         <p className="text-[10px] text-slate-400 font-bold leading-relaxed">& Life Coach</p>
                      </div>
                   </motion.div>
@@ -815,8 +815,8 @@ const AboutPage: React.FC = () => {
                         <UserCheck size={20} />
                      </div>
                      <div>
-                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">Phase 05</p>
-                        <h4 className="text-sm font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Renowned Educator</h4>
+                        <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">05</p>
+                        <h4 className="text-xl font-black uppercase leading-tight mb-2 group-hover:text-gameGold transition-colors">Renowned<br />Educator</h4>
                         <p className="text-[10px] text-slate-400 font-bold leading-relaxed">Mechanical & Civil Domain</p>
                      </div>
                   </motion.div>
@@ -831,8 +831,8 @@ const AboutPage: React.FC = () => {
                      <Trophy size={32} />
                   </div>
                   <div>
-                     <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1 opacity-60">Phase 06</p>
-                     <h4 className="text-xl font-black uppercase leading-none mb-2 group-hover:text-gameGold transition-colors">Guiding Officers</h4>
+                     <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1 opacity-60">06</p>
+                     <h4 className="text-2xl font-black uppercase leading-none mb-2 group-hover:text-gameGold transition-colors">Guiding<br />Officers</h4>
                      <p className="text-xs text-slate-400 font-bold leading-relaxed">IAS, ESE & Class-1 Officers</p>
                   </div>
                </motion.div>
@@ -845,8 +845,8 @@ const AboutPage: React.FC = () => {
                      <Medal size={32} />
                   </div>
                   <div className="flex-1">
-                     <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1">Phase 07: Elite Selections</p>
-                     <h4 className="text-xl font-black uppercase leading-none mb-2">Cracked GATE, ESE</h4>
+                     <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1">07: Elite Selections</p>
+                     <h4 className="text-2xl font-black uppercase leading-none mb-2">Cracked<br />GATE, ESE</h4>
                      <p className="text-[10px] text-teal-100 font-medium leading-relaxed opacity-70">
                         Cracked GATE, ESE and many other technical exams & selection process of premier PSUs like IOCL, BPCL and Ministry of Defence.
                      </p>
