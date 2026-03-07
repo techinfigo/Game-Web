@@ -17,7 +17,7 @@ const CourseHelpSection: React.FC = () => {
       description: "Access high-quality content, structured course planners, and detailed PYQ analysis to build a strong foundation.",
       tags: ["Notes", "Planner", "PYQs"],
       icon: BookOpen,
-      bgGradient: "from-[#075d63] to-[#0e8a91]",
+      bgGradient: "from-[#075d63] to-[#0a4d52]",
       graphic: (
         <div className="relative w-full h-full flex items-center justify-center">
            {/* Abstract Book/Notes Graphic */}
@@ -58,7 +58,7 @@ const CourseHelpSection: React.FC = () => {
       description: "Sharpen your skills with topic-wise tests, full-length mock exams, and comprehensive performance analysis.",
       tags: ["Mock Tests", "Analysis", "Ranking"],
       icon: Target,
-      bgGradient: "from-[#b48e0b] to-[#f2c537]",
+      bgGradient: "from-[#b48e0b] to-[#8c6d09]",
       graphic: (
         <div className="relative w-full h-full flex items-center justify-center">
            <div className="relative z-10 bg-white p-5 rounded-2xl shadow-2xl border border-amber-100 w-56 transform group-hover:scale-105 transition-all duration-500">
@@ -97,7 +97,7 @@ const CourseHelpSection: React.FC = () => {
       description: "Learn at your own pace with a blend of live interactive sessions and high-quality recorded modules available 24/7.",
       tags: ["Live Classes", "Recorded", "24/7 Access"],
       icon: Laptop,
-      bgGradient: "from-[#1e293b] to-[#334155]",
+      bgGradient: "from-[#053d41] to-[#075d63]",
       graphic: (
         <div className="relative w-full h-full flex items-center justify-center">
            <div className="relative z-10 w-64 aspect-video bg-white rounded-xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transform group-hover:scale-105 transition-all duration-500">
@@ -122,7 +122,7 @@ const CourseHelpSection: React.FC = () => {
            </div>
            
            <div className="absolute -bottom-2 -right-2 bg-white p-3 rounded-xl shadow-lg border border-slate-100 flex items-center gap-3 z-20">
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+              <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-gameTeal">
                  <CheckCircle2 size={16} />
               </div>
               <div className="flex flex-col">
@@ -140,18 +140,18 @@ const CourseHelpSection: React.FC = () => {
       description: "Get personal guidance, tailored study plans, and dedicated doubt resolution support throughout your journey.",
       tags: ["Mentorship", "Doubt Solving", "Guidance"],
       icon: Users,
-      bgGradient: "from-[#4f46e5] to-[#6366f1]",
+      bgGradient: "from-[#8c6d09] to-[#b48e0b]",
       graphic: (
         <div className="relative w-full h-full flex items-center justify-center">
            <div className="relative z-10 flex flex-col gap-3 w-full max-w-[200px]">
               {/* Chat Bubble 1 */}
-              <div className="self-end bg-[#4f46e5] text-white p-3 rounded-2xl rounded-tr-sm text-xs shadow-lg max-w-[90%] transform group-hover:-translate-x-2 transition-transform duration-500">
+              <div className="self-end bg-[#075d63] text-white p-3 rounded-2xl rounded-tr-sm text-xs shadow-lg max-w-[90%] transform group-hover:-translate-x-2 transition-transform duration-500">
                  Sir, I'm stuck in Thermodynamics. Can you help?
               </div>
               {/* Chat Bubble 2 */}
               <div className="self-start bg-white text-slate-700 p-3 rounded-2xl rounded-tl-sm text-xs shadow-lg border border-slate-100 max-w-[95%] flex gap-3 items-start transform group-hover:translate-x-2 transition-transform duration-500 delay-75">
-                 <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Sparkles size={12} className="text-indigo-600" />
+                 <div className="w-6 h-6 rounded-full bg-teal-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles size={12} className="text-gameTeal" />
                  </div>
                  <div>
                     <p className="font-semibold mb-1">Don't worry!</p>
@@ -190,7 +190,7 @@ const CourseHelpSection: React.FC = () => {
                  <CheckCircle2 size={14} /> Why Choose Us
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-                 How do these courses <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#075d63] to-teal-600">help you?</span>
+                 How do these courses <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#075d63] to-[#b48e0b]">help you?</span>
               </h2>
            </motion.div>
         </div>

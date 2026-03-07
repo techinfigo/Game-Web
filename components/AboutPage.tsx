@@ -1349,7 +1349,7 @@ const AboutPage: React.FC = () => {
                            {!isActive && (
                               <>
                                  <div className="relative h-full flex items-center justify-center">
-                                       <h3 className="font-black uppercase tracking-[0.2em] text-sm md:text-base lg:text-lg whitespace-nowrap transform -rotate-90 origin-center opacity-70">
+                                       <h3 className="font-black uppercase tracking-[0.2em] text-sm md:text-base lg:text-lg text-center leading-tight max-w-[200px] transform -rotate-90 origin-center opacity-70">
                                           {reason.title}
                                        </h3>
                                  </div>
