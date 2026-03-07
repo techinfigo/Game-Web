@@ -744,8 +744,8 @@ const AboutPage: React.FC = () => {
                      initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                      className="bg-white/5 border border-white/10 p-6 rounded-[2rem] flex-1 flex flex-col justify-between hover:bg-white/[0.08] transition-all group"
                   >
-                     <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-500 flex items-center justify-center mb-6">
-                        <Landmark size={20} />
+                     <div className="w-14 h-14 rounded-xl bg-blue-600/20 text-blue-500 flex items-center justify-center mb-6">
+                        <Landmark size={28} />
                      </div>
                      <div>
                         <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">01</p>
@@ -757,8 +757,8 @@ const AboutPage: React.FC = () => {
                      initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                      className="bg-white/5 border border-white/10 p-6 rounded-[2rem] flex-1 flex flex-col justify-between hover:bg-white/[0.08] transition-all group"
                   >
-                     <div className="w-10 h-10 rounded-xl bg-teal-600/20 text-teal-500 flex items-center justify-center mb-6">
-                        <Users size={20} />
+                     <div className="w-14 h-14 rounded-xl bg-teal-600/20 text-teal-500 flex items-center justify-center mb-6">
+                        <Users size={28} />
                      </div>
                      <div>
                         <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">02</p>
@@ -798,8 +798,8 @@ const AboutPage: React.FC = () => {
                      initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                      className="bg-white/5 border border-white/10 p-6 rounded-[2rem] flex-1 flex flex-col justify-between hover:bg-white/[0.08] transition-all group"
                   >
-                     <div className="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center mb-6">
-                        <Mic2 size={20} />
+                     <div className="w-14 h-14 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center mb-6">
+                        <Mic2 size={28} />
                      </div>
                      <div>
                         <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">03</p>
@@ -811,8 +811,8 @@ const AboutPage: React.FC = () => {
                      initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                      className="bg-white/5 border border-white/10 p-6 rounded-[2rem] flex-1 flex flex-col justify-between hover:bg-white/[0.08] transition-all group"
                   >
-                     <div className="w-10 h-10 rounded-xl bg-purple-600/20 text-purple-500 flex items-center justify-center mb-6">
-                        <UserCheck size={20} />
+                     <div className="w-14 h-14 rounded-xl bg-purple-600/20 text-purple-500 flex items-center justify-center mb-6">
+                        <UserCheck size={28} />
                      </div>
                      <div>
                         <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-2 opacity-60">05</p>
@@ -827,8 +827,8 @@ const AboutPage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   className="md:col-span-6 bg-white/5 border border-white/10 p-8 rounded-[2.5rem] flex items-center gap-8 hover:bg-white/[0.08] transition-all group"
                >
-                  <div className="w-16 h-16 rounded-2xl bg-rose-600/20 text-rose-500 flex items-center justify-center shrink-0">
-                     <Trophy size={32} />
+                  <div className="w-20 h-20 rounded-2xl bg-rose-600/20 text-rose-500 flex items-center justify-center shrink-0">
+                     <Trophy size={40} />
                   </div>
                   <div>
                      <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1 opacity-60">06</p>
@@ -841,8 +841,8 @@ const AboutPage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                   className="md:col-span-6 bg-[#075d63]/10 border border-gameTeal/20 p-8 rounded-[2.5rem] flex items-center gap-8 hover:bg-[#075d63]/20 transition-all group"
                >
-                  <div className="w-16 h-16 rounded-2xl bg-gameGold/20 text-gameGold flex items-center justify-center shrink-0 shadow-lg">
-                     <Medal size={32} />
+                  <div className="w-20 h-20 rounded-2xl bg-gameGold/20 text-gameGold flex items-center justify-center shrink-0 shadow-lg">
+                     <Medal size={40} />
                   </div>
                   <div className="flex-1">
                      <p className="text-gameGold text-[8px] font-black uppercase tracking-widest mb-1">07: Elite Selections</p>
