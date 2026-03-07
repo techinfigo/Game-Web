@@ -39,6 +39,7 @@ const AboutPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
   const [selectedFaculty, setSelectedFaculty] = useState<any | null>(null);
+  const [facultySlide, setFacultySlide] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,6 +58,20 @@ const AboutPage: React.FC = () => {
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.1 },
     transition: { duration: 0.8, ease: "easeOut" as const }
+  };
+
+  const chiefMentor = { 
+    name: "Gaurav Babu Sir", 
+    role: "Founder & Chief Mentor",
+    expLabel: "13+ YRS EXP.",
+    exp: "13+ YEARS OF TEACHING EXCELLENCE",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=800&q=80",
+    stats: [
+      { label: "Mentored 1 Lakh+ Students", icon: Users },
+      { label: "GATE & ESE Expert", icon: Trophy },
+      { label: "Mechanical & Civil Guru", icon: Landmark },
+      { label: "Visionary Educator", icon: Lightbulb }
+    ]
   };
 
   const facultyMembers = [
@@ -1004,7 +1019,7 @@ const AboutPage: React.FC = () => {
          </div>
       </section>
 
-      {/* SECTION 8: EDUCATORS - REDESIGNED FOR BETTER VISIBILITY & AESTHETICS */}
+      {/* SECTION 8: EDUCATORS - SPOTLIGHT & CAROUSEL REDESIGN */}
       <section className="py-32 bg-[#0b0c10] overflow-hidden relative border-t border-white/5">
          <div className="absolute inset-0 bg-graph-paper opacity-[0.03] pointer-events-none invert"></div>
          <div className="max-w-[1280px] mx-auto px-6 relative z-10">
@@ -1025,61 +1040,147 @@ const AboutPage: React.FC = () => {
                </motion.div>
             </div>
 
-            {/* Profile-Focused Faculty Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-               {facultyMembers.map((fac, i) => (
-                  <motion.div 
-                     key={i} 
-                     initial={{ opacity: 0, y: 30 }} 
-                     whileInView={{ opacity: 1, y: 0 }} 
-                     viewport={{ once: true }} 
-                     transition={{ delay: i * 0.1 }}
-                     onClick={() => setSelectedFaculty(fac)}
-                     className="bg-[#12141c] rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl flex flex-col md:flex-row group hover:border-gameGold/30 transition-all duration-500 cursor-pointer active:scale-[0.98] h-full"
-                  >
-                     {/* Left Side: Image Only */}
-                     <div className="w-full md:w-[45%] relative overflow-hidden shrink-0 bg-[#0a0a0a] p-4">
-                        <div className="relative h-full aspect-[4/5] md:aspect-auto rounded-[1.5rem] overflow-hidden border-2 border-white/5 group-hover:border-gameGold/40 transition-colors duration-500 bg-slate-900">
-                           <img 
-                              src={fac.img} 
-                              alt={fac.name} 
-                              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
-                           />
-                           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+               
+               {/* CHIEF MENTOR SPOTLIGHT (40%) */}
+               <motion.div 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  onClick={() => setSelectedFaculty(chiefMentor)}
+                  className="lg:w-[40%] bg-gradient-to-br from-[#1a1c25] to-[#12141c] rounded-[3.5rem] overflow-hidden border-2 border-gameGold/20 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] group cursor-pointer relative"
+               >
+                  <div className="absolute top-8 right-8 z-20">
+                     <div className="bg-gameGold text-black px-4 py-1.5 rounded-xl font-black text-[10px] uppercase tracking-[0.3em] shadow-xl">
+                        CHIEF MENTOR
+                     </div>
+                  </div>
+
+                  <div className="h-[450px] relative overflow-hidden">
+                     <img 
+                        src={chiefMentor.img} 
+                        alt={chiefMentor.name} 
+                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" 
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#12141c] via-transparent to-transparent opacity-90"></div>
+                     
+                     <div className="absolute bottom-8 left-8 right-8">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gameGold/20 border border-gameGold/30 rounded-lg mb-4">
+                           <Sparkles size={12} className="text-gameGold" />
+                           <span className="text-gameGold font-black text-xs uppercase tracking-widest">{chiefMentor.expLabel}</span>
+                        </div>
+                        <h3 className="text-5xl font-black text-white mb-2 leading-none tracking-tighter group-hover:text-gameGold transition-colors">
+                           {chiefMentor.name}
+                        </h3>
+                        <p className="text-gameTeal font-black text-sm uppercase tracking-[0.3em]">{chiefMentor.role}</p>
+                     </div>
+                  </div>
+
+                  <div className="p-10 border-t border-white/5">
+                     <p className="text-slate-400 text-lg font-medium leading-relaxed italic mb-8">
+                        "Redefining engineering education through visualized teaching and life-changing mentorship."
+                     </p>
+                     <div className="flex items-center gap-4">
+                        <div className="bg-gameGold text-black px-8 py-3 rounded-xl text-[11px] font-black uppercase tracking-[0.2em] shadow-lg group-hover:bg-white transition-all">
+                           View Vision
+                        </div>
+                        <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-gameGold group-hover:text-black transition-all">
+                           <ChevronRight size={24} strokeWidth={3} />
                         </div>
                      </div>
+                  </div>
+               </motion.div>
 
-                     {/* Right Side: Simple Profile Info - FORCED WRAP TO TWO LINES */}
-                     <div className="p-8 md:p-10 flex-1 flex flex-col justify-center relative z-10">
-                        <div className="mb-4">
-                           <div className="inline-flex items-center gap-2 px-3 py-1 bg-gameGold/10 border border-gameGold/20 rounded-lg mb-6">
-                              <Sparkles size={12} className="text-gameGold" />
-                              <span className="text-gameGold font-black text-xs uppercase tracking-widest">{fac.expLabel}</span>
-                           </div>
-                           
-                           {/* NAME: Forced two-line wrap with increased font size */}
-                           <div className="max-w-[12rem]">
-                              <h4 className="text-4xl md:text-5xl font-black text-white mb-2 leading-[1.1] tracking-tight break-words group-hover:text-gameGold transition-colors">
-                                 {fac.name}
-                              </h4>
-                           </div>
-                           <p className="text-gameTeal font-black text-sm uppercase tracking-[0.2em] opacity-80">{fac.role}</p>
-                        </div>
-                        
-                        {/* More Attractive Interaction Button */}
-                        <div className="mt-8 flex items-center gap-4">
-                           <div className="bg-gameTeal/10 text-gameTeal px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] border border-gameTeal/20 group-hover:bg-gameGold group-hover:text-black group-hover:border-gameGold transition-all shadow-lg shadow-black/20">
-                              View Profile
-                           </div>
-                           <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-gameGold group-hover:text-black transition-all group-hover:scale-110">
-                              <ChevronRight size={20} strokeWidth={3} />
-                           </div>
-                        </div>
-
-                        <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-gameTeal/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-gameTeal/10 transition-all"></div>
+               {/* FACULTY CAROUSEL (60%) */}
+               <div className="lg:w-[60%] flex flex-col">
+                  <div className="flex items-center justify-between mb-8">
+                     <h4 className="text-white font-black text-xl uppercase tracking-widest flex items-center gap-3">
+                        <Users className="text-gameTeal" /> Expert Faculty Team
+                     </h4>
+                     <div className="flex gap-3">
+                        <button 
+                           onClick={() => setFacultySlide(prev => Math.max(0, prev - 1))}
+                           disabled={facultySlide === 0}
+                           className={`w-12 h-12 rounded-full flex items-center justify-center transition-all border ${facultySlide === 0 ? 'bg-white/5 text-white/20 border-white/5 cursor-not-allowed' : 'bg-white/10 text-white border-white/10 hover:bg-gameTeal hover:border-gameTeal'}`}
+                        >
+                           <ChevronLeft size={24} />
+                        </button>
+                        <button 
+                           onClick={() => setFacultySlide(prev => Math.min(Math.ceil(facultyMembers.length / 2) - 1, prev + 1))}
+                           disabled={facultySlide >= Math.ceil(facultyMembers.length / 2) - 1}
+                           className={`w-12 h-12 rounded-full flex items-center justify-center transition-all border ${facultySlide >= Math.ceil(facultyMembers.length / 2) - 1 ? 'bg-white/5 text-white/20 border-white/5 cursor-not-allowed' : 'bg-white/10 text-white border-white/10 hover:bg-gameTeal hover:border-gameTeal'}`}
+                        >
+                           <ChevronRight size={24} />
+                        </button>
                      </div>
-                  </motion.div>
-               ))}
+                  </div>
+
+                  <div className="relative overflow-hidden flex-1">
+                     <motion.div 
+                        className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full"
+                        initial={false}
+                        animate={{ x: 0 }}
+                        key={facultySlide}
+                     >
+                        <AnimatePresence mode="wait">
+                           {facultyMembers.slice(facultySlide * 2, facultySlide * 2 + 2).map((fac, i) => (
+                              <motion.div 
+                                 key={fac.name} 
+                                 initial={{ opacity: 0, x: 20 }} 
+                                 animate={{ opacity: 1, x: 0 }} 
+                                 exit={{ opacity: 0, x: -20 }}
+                                 transition={{ delay: i * 0.1 }}
+                                 onClick={() => setSelectedFaculty(fac)}
+                                 className="bg-[#12141c] rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl flex flex-col group hover:border-gameTeal/30 transition-all duration-500 cursor-pointer h-full"
+                              >
+                                 <div className="h-64 relative overflow-hidden bg-[#0a0a0a]">
+                                    <img 
+                                       src={fac.img} 
+                                       alt={fac.name} 
+                                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#12141c] via-transparent to-transparent opacity-60"></div>
+                                 </div>
+
+                                 <div className="p-8 flex-1 flex flex-col justify-center">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-gameTeal/10 border border-gameTeal/20 rounded-lg mb-4 w-fit">
+                                       <Sparkles size={12} className="text-gameTeal" />
+                                       <span className="text-gameTeal font-black text-[10px] uppercase tracking-widest">{fac.expLabel}</span>
+                                    </div>
+                                    <h4 className="text-3xl font-black text-white mb-2 leading-tight group-hover:text-gameTeal transition-colors">
+                                       {fac.name}
+                                    </h4>
+                                    <p className="text-slate-400 font-black text-[10px] uppercase tracking-[0.2em] mb-6">{fac.role}</p>
+                                    
+                                    <div className="mt-auto flex items-center gap-3">
+                                       <div className="bg-white/5 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-white/10 group-hover:bg-gameTeal group-hover:border-gameTeal transition-all">
+                                          View Profile
+                                       </div>
+                                       <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-gameTeal transition-all">
+                                          <ChevronRight size={16} strokeWidth={3} />
+                                       </div>
+                                    </div>
+                                 </div>
+                              </motion.div>
+                           ))}
+                        </AnimatePresence>
+                     </motion.div>
+                  </div>
+
+                  {/* Carousel Progress Bar */}
+                  <div className="mt-12 flex items-center gap-4">
+                     <div className="h-1 bg-white/10 flex-grow rounded-full overflow-hidden">
+                        <motion.div 
+                           className="h-full bg-gameTeal"
+                           initial={{ width: "0%" }}
+                           animate={{ width: `${((facultySlide + 1) / Math.ceil(facultyMembers.length / 2)) * 100}%` }}
+                        />
+                     </div>
+                     <span className="text-slate-500 font-black text-xs uppercase tracking-widest">
+                        {facultySlide + 1} / {Math.ceil(facultyMembers.length / 2)}
+                     </span>
+                  </div>
+               </div>
             </div>
 
          </div>
